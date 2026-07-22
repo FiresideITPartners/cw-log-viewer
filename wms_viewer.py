@@ -2,7 +2,6 @@
 """Wildix Call Weaver Log Viewer — parse, filter, and visualize call-flow logs."""
 
 import argparse
-import sys
 from datetime import datetime
 
 
@@ -92,13 +91,18 @@ def build_parser() -> argparse.ArgumentParser:
     )
 
     # ── output modes ───────────────────────────────────────────────
-    parser.add_argument(
+    output_group = parser.add_mutually_exclusive_group()
+    output_group.add_argument(
+        '--csv',
+        action='store_true',
+        help='Export filtered entries as CSV to stdout.',
+    )
+    output_group.add_argument(
         '--summary', '-s',
         action='store_true',
         help='Show call-flow summaries instead of raw log entries.',
     )
-
-    parser.add_argument(
+    output_group.add_argument(
         '--list-calls', '-l',
         action='store_true',
         help='Print a table of all Call-IDs with their start/end times.',
@@ -138,6 +142,12 @@ def main(argv: list[str] | None = None) -> None:
     # Deferred imports — only needed when actually running, not for --help.
     from src.wms_viewer.parser import LogParser   # noqa: E402
     from src.wms_viewer.callflow import CallFlow  # noqa: E402
+    from src.wms_viewer.output_formatter import (  # noqa: E402
+        format_list_calls,
+        format_summary,
+        format_csv,
+        format_raw,
+    )
 
     # Load and parse
     log_parser = LogParser(year=args.year)
@@ -145,11 +155,11 @@ def main(argv: list[str] | None = None) -> None:
     cf = CallFlow(entries)
 
     if args.list_calls:
-        _print_call_list(cf)
+        format_list_calls(cf)
         return
 
     # Filter
-    exclude = None if args.show_noise else ['config.c', 'res_awstranscribe.c']
+    exclude = [] if args.show_noise else ['config.c', 'res_awstranscribe.c']
     results = cf.filter_entries(
         call_id=args.call_id,
         extension=args.extension,
@@ -160,53 +170,12 @@ def main(argv: list[str] | None = None) -> None:
     )
 
     if args.summary:
-        _print_summaries(cf, args)
+        format_summary(cf, call_id=args.call_id,
+                       start=args.time_from, end=args.time_to)
+    elif args.csv:
+        format_csv(results)
     else:
-        _print_raw(results)
-
-
-def _print_call_list(cf: 'CallFlow') -> None:
-    """Print a tabular listing of all Call-IDs."""
-    header = f"{'Call-ID':<16} {'Start':>8} {'End':>8} {'Entries':>8}  First Message"
-    print(header)
-    print('-' * len(header))
-    for cid in cf.sorted_call_ids():
-        call = cf.get_call(cid)
-        start = call[0].timestamp.strftime('%H:%M:%S')
-        end = call[-1].timestamp.strftime('%H:%M:%S')
-        first_msg = call[0].message[:60]
-        print(f'{cid:<16} {start:>8} {end:>8} {len(call):>8}  {first_msg}')
-
-
-def _print_summaries(cf: 'CallFlow', args: argparse.Namespace) -> None:
-    """Print call-flow summaries for one or all calls."""
-    call_ids = [args.call_id] if args.call_id else cf.sorted_call_ids()
-    for cid in call_ids:
-        if cid not in cf.calls:
-            continue
-        call_entries = cf.get_call(cid)
-        if args.time_from and all(e.timestamp < args.time_from
-                                  for e in call_entries):
-            continue
-        if args.time_to and all(e.timestamp > args.time_to
-                                for e in call_entries):
-            continue
-        print(cf.summarize_call(cid))
-        print()
-
-
-def _print_raw(results: list) -> None:
-    """Print a filtered table of raw log entries."""
-    header = (f"{'Time':>8} {'Level':<8} {'Call-ID':<14}"
-              f" {'Process':<25} Message")
-    print(header)
-    print('-' * len(header))
-    for e in results:
-        ts = e.timestamp.strftime('%H:%M:%S')
-        cid = e.call_id or '-'
-        msg = e.message[:80]
-        print(f'{ts:>8} {e.level:<8} {cid:<14} {e.process:<25} {msg}')
-    print(f'\n--- {len(results)} entries shown ---')
+        format_raw(results)
 
 
 if __name__ == '__main__':
