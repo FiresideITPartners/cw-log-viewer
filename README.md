@@ -88,6 +88,7 @@ python cw_viewer.py <logfile> [options]
 
 | Flag | Description |
 |---|---|
+| `--no-truncate`, `-T` | Print full log messages without truncating. By default, messages are sliced at 80 chars for `format_raw` and 60 chars for `--list-calls` to keep the table aligned; this flag disables that so the terminal wraps or scrolls instead |
 | `--show-noise` | Include `config.c` and `res_awstranscribe.c` lines (excluded by default) |
 | `--year YYYY` | Calendar year for timestamp parsing (default: current year) |
 | `--host ADDR` | Web server listen address (default: `127.0.0.1`) |

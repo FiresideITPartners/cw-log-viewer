@@ -122,6 +122,14 @@ def build_parser() -> argparse.ArgumentParser:
              '(excluded by default).',
     )
 
+    # ── display ─────────────────────────────────────────────────────
+    parser.add_argument(
+        '--no-truncate', '-T',
+        action='store_true',
+        help='Print full log messages without truncating. '
+             'The terminal handles wrapping or horizontal scrolling.',
+    )
+
     # ── timestamp year ─────────────────────────────────────────────
     parser.add_argument(
         '--year',
@@ -208,7 +216,7 @@ def main(argv: list[str] | None = None) -> None:
     _rebase_time_filters(args, entries)
 
     if args.list_calls:
-        format_list_calls(cf)
+        format_list_calls(cf, no_truncate=args.no_truncate)
         return
 
     if args.serve:
@@ -233,7 +241,7 @@ def main(argv: list[str] | None = None) -> None:
     elif args.csv:
         format_csv(results)
     else:
-        format_raw(results)
+        format_raw(results, no_truncate=args.no_truncate)
 
 
 if __name__ == '__main__':

@@ -21,12 +21,15 @@ if TYPE_CHECKING:
 def format_list_calls(
     cf: CallFlow,
     file: TextIO = sys.stdout,
+    no_truncate: bool = False,
 ) -> None:
     """Print a table of all Call-IDs with start/end times and entry counts.
 
     Args:
         cf: A CallFlow instance with parsed and grouped entries.
         file: Output stream (default stdout).
+        no_truncate: If True, print the full first message instead of
+            truncating at 60 chars.
     """
     col_cid = 16
     col_time = 19
@@ -46,7 +49,9 @@ def format_list_calls(
         last = call[-1]
         start = first.timestamp.strftime('%Y-%m-%d %H:%M:%S') if first.timestamp else '--:--:--'
         end = last.timestamp.strftime('%Y-%m-%d %H:%M:%S') if last.timestamp else '--:--:--'
-        first_msg = (first.message or '')[:60]
+        first_msg = (first.message or '')
+        if not no_truncate:
+            first_msg = first_msg[:60]
         print(
             f"{cid:<{col_cid}} {start:>{col_time}} "
             f"{end:>{col_time}} {len(call):>{col_count}}  {first_msg}",
@@ -95,12 +100,18 @@ def format_summary(
         print(cf.summarize_call(cid), file=file)
 
 
-def format_raw(entries: list[LogEntry], file: TextIO = sys.stdout) -> None:
+def format_raw(
+    entries: list[LogEntry],
+    file: TextIO = sys.stdout,
+    no_truncate: bool = False,
+) -> None:
     """Print a table of filtered log entries.
 
     Args:
         entries: Filtered list of LogEntry objects.
         file: Output stream (default stdout).
+        no_truncate: If True, print the full message instead of
+            truncating at 80 chars.
     """
     if not entries:
         print("(no entries)", file=file)
@@ -115,7 +126,9 @@ def format_raw(entries: list[LogEntry], file: TextIO = sys.stdout) -> None:
     for e in entries:
         ts = e.timestamp.strftime('%Y-%m-%d %H:%M:%S') if e.timestamp else '--:--:--'
         cid = e.call_id or '-'
-        msg = (e.message or '')[:80]
+        msg = (e.message or '')
+        if not no_truncate:
+            msg = msg[:80]
         print(
             f"{ts:>19} {e.level or '':<8} {cid:<14} "
             f"{e.process or '':<25} {msg}",
