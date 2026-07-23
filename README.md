@@ -38,24 +38,24 @@ Python.
 
 ## Quick Start
 
-A sanitized demo log is included (`cwtrunc-demo.txt`) so you can try the tool
+A sanitized demo log is included (`cwlogdemo.log`) so you can try the tool
 without real call data. Replace it with your own `cw.log` when you're ready.
 
 ```bash
 # Raw log output (noise filtered out by default)
-python cw_viewer.py cwtrunc-demo.txt
+python cw_viewer.py cwlogdemo.log
 
 # List every call in the file: Call-ID, start/end time, entry count, first message
-python cw_viewer.py cwtrunc-demo.txt --list-calls
+python cw_viewer.py cwlogdemo.log --list-calls
 
 # Call-flow summary for every call
-python cw_viewer.py cwtrunc-demo.txt --summary
+python cw_viewer.py cwlogdemo.log --summary
 
 # Drill into one call
-python cw_viewer.py cwtrunc-demo.txt --summary --call-id C-0000004c
+python cw_viewer.py cwlogdemo.log --summary --call-id C-0000004c
 
 # Interactive web UI (opens in your browser)
-python cw_viewer.py cwtrunc-demo.txt --serve
+python cw_viewer.py cwlogdemo.log --serve
 ```
 
 ## CLI Reference
@@ -120,10 +120,10 @@ and a reactive front-end where you can search, filter, and click into any
 call's detail view.
 
 ```bash
-python cw_viewer.py cwtrunc.txt --serve
+python cw_viewer.py cwlogdemo.log --serve
 
 # Custom host/port
-python cw_viewer.py cwtrunc.txt --serve --host 0.0.0.0 --port 9090
+python cw_viewer.py cwlogdemo.log --serve --host 0.0.0.0 --port 9090
 ```
 
 ![Web UI detail view placeholder](docs/web-ui-detail.png)

@@ -1,0 +1,500 @@
+[Jul 16 12:38:00] VERBOSE[778400][C-0000004a] app_queue.c:     -- Nobody picked up in 20000 ms
+[Jul 16 12:38:00] VERBOSE[778400][C-0000004a] pbx_lua.c:     -- Executing [2@IVR 801:1] NoOp("SIP/classound-00000088", "Executing 'Playback': sound - "custom/Front_Desk_Voicemail", waitDigits - n, opts - ")
+[Jul 16 12:38:00] VERBOSE[778400][C-0000004a] pbx_lua.c:     -- Executing [2@IVR 801:1] Playback("SIP/classound-00000088", "custom/Front_Desk_Voicemail,")
+[Jul 16 12:38:00] VERBOSE[778400][C-0000004a] file.c:     -- <SIP/classound-00000088> Playing 'custom/Front_Desk_Voicemail.alaw' (language 'en')
+[Jul 16 12:38:00] VERBOSE[778431][C-0000004a] pbx.c:   == Spawn extension (internalcalls, 202, 1) exited non-zero on 'Local/202@internalcalls-00000026;2'
+[Jul 16 12:38:08] VERBOSE[778400][C-0000004a] pbx_lua.c:     -- Executing [2@IVR 801:1] NoOp("SIP/classound-00000088", "Executing 'Go to voicemail': mailbox - 900, options - ")
+[Jul 16 12:38:08] VERBOSE[778400][C-0000004a] pbx_lua.c:     -- Executing [2@IVR 801:1] Set("SIP/classound-00000088", "JITTERBUFFER(adaptive)=500,1000,40")
+[Jul 16 12:38:08] VERBOSE[778400][C-0000004a] pbx_lua.c:     -- Executing [2@IVR 801:1] CELGenUserEvent("SIP/classound-00000088", "SendFakeCalleeUpdate,900")
+[Jul 16 12:38:08] VERBOSE[778400][C-0000004a] pbx_lua.c:     -- Executing [2@IVR 801:1] CELGenUserEvent("SIP/classound-00000088", "App,VoiceMail,900@,")
+[Jul 16 12:38:08] VERBOSE[778400][C-0000004a] pbx_lua.c:     -- Executing [2@IVR 801:1] VoiceMail("SIP/classound-00000088", "900@,s")
+[Jul 16 12:38:08] VERBOSE[778400][C-0000004a] file.c:     -- <SIP/classound-00000088> Playing 'beep.alaw' (language 'en')
+[Jul 16 12:38:08] VERBOSE[778400][C-0000004a] app_voicemail.c:     -- Recording the message
+[Jul 16 12:38:08] VERBOSE[778400][C-0000004a] app.c:     -- x=0, open writing:  /var/spool/callweaver/voicemail/900/tmp/mqBlNZ format: alaw, 0xffff505b5ec0
+[Jul 16 12:38:10] VERBOSE[778400][C-0000004a] app.c:     -- User hung up
+[Jul 16 12:38:10] VERBOSE[778400][C-0000004a] app_voicemail.c:     -- Recording was 0 seconds long but needs to be at least 1 - abandoning
+[Jul 16 12:38:10] VERBOSE[778400][C-0000004a] app_stack.c:     -- SIP/classound-00000088 Internal Gosub(hdlr,service,1) start
+[Jul 16 12:38:10] VERBOSE[778400][C-0000004a] pbx_lua.c:     -- Executing [service@hdlr:1] NoOp("SIP/classound-00000088", "Notification for mwi manager was not sent")
+[Jul 16 12:38:10] NOTICE[778400][C-0000004a] app_stack.c: SIP/classound-00000088 Abnormal 'Gosub(hdlr,service,1)' exit.  Popping routine return locations.
+[Jul 16 12:38:10] NOTICE[778400][C-0000004a] chan_sip.c: trunk_calls_count decremented and now its value is 0
+[Jul 16 12:38:55] NOTICE[4847][C-0000004b] chan_sip.c: Number Normalization for peer 'classound': Before - anonymous; After - anonymous
+[Jul 16 12:38:55] VERBOSE[4847][C-0000004b] netsock2.c:   == Using SIP RTP CoS mark 5
+[Jul 16 12:38:55] NOTICE[4847][C-0000004b] chan_sip.c: trunk_calls_count incremented and now its value is: 1
+[Jul 16 12:38:55] NOTICE[778743][C-0000004b] chan_sip.c: Number Normalization for peer 'classound': Before - anonymous; After - anonymous
+[Jul 16 12:38:55] VERBOSE[778743][C-0000004b] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-0000008a", "Set call class to 'unknown'(0)")
+[Jul 16 12:38:55] VERBOSE[778743][C-0000004b] pbx_lua.c:     -- Executing [+5550100100@classound:1] CELGenUserEvent("SIP/classound-0000008a", "TrunkCall,incoming,classound")
+[Jul 16 12:38:55] VERBOSE[778743][C-0000004b] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-0000008a", "Executing 'Lookup caller name': PBID - all, number - anonymous")
+[Jul 16 12:38:55] NOTICE[778743][C-0000004b] chan_sip.c: Number Normalization for peer 'classound': Before - anonymous; After - anonymous
+[Jul 16 12:38:55] VERBOSE[778743][C-0000004b] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-0000008a", "Search number not found in the contact storages")
+[Jul 16 12:38:55] VERBOSE[778743][C-0000004b] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-0000008a", "Set Caller num to "anonymous" desttype "inc"")
+[Jul 16 12:38:55] VERBOSE[778743][C-0000004b] pbx_lua.c:     -- Executing [+5550100100@classound:1] CELGenUserEvent("SIP/classound-0000008a", "LookUp,QW5vbnltb3Vz,,anonymous,,inc")
+[Jul 16 12:38:55] VERBOSE[778743][C-0000004b] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-0000008a", "Set Caller name to "Anonymous" desttype "inc"")
+[Jul 16 12:38:55] VERBOSE[778743][C-0000004b] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-0000008a", "Executing 'Jump to': exten - IVR, context - IVR 801, priority - 1")
+[Jul 16 12:38:55] VERBOSE[778743][C-0000004b] pbx_lua.c:     -- Executing [+5550100100@classound:1] Goto("SIP/classound-0000008a", "IVR 801,IVR,1")
+[Jul 16 12:38:55] VERBOSE[778743][C-0000004b] pbx.c:     -- Goto (IVR 801,IVR,1)
+[Jul 16 12:38:55] VERBOSE[778743][C-0000004b] pbx_lua.c:     -- Executing [IVR@IVR 801:1] NoOp("SIP/classound-0000008a", "Executing 'Playback': sound - "custom/DayTimeMainMenu", waitDigits - y, opts - ")
+[Jul 16 12:38:55] VERBOSE[778743][C-0000004b] pbx_lua.c:     -- Executing [IVR@IVR 801:1] Background("SIP/classound-0000008a", "custom/DayTimeMainMenu,")
+[Jul 16 12:38:56] VERBOSE[778743][C-0000004b] file.c:     -- <SIP/classound-0000008a> Playing 'custom/DayTimeMainMenu.alaw' (language 'en')
+[Jul 16 12:38:58] DTMF[778743][C-0000004b] channel.c: DTMF begin '0' received on SIP/classound-0000008a
+[Jul 16 12:38:58] DTMF[778743][C-0000004b] channel.c: DTMF begin ignored '0' on SIP/classound-0000008a
+[Jul 16 12:38:59] DTMF[778743][C-0000004b] channel.c: DTMF end '0' received on SIP/classound-0000008a, duration 80 ms
+[Jul 16 12:38:59] DTMF[778743][C-0000004b] channel.c: DTMF end passthrough '0' on SIP/classound-0000008a
+[Jul 16 12:39:04] VERBOSE[778743][C-0000004b] pbx.c:   == CDR updated on SIP/classound-0000008a
+[Jul 16 12:39:04] VERBOSE[778743][C-0000004b] pbx_lua.c:     -- Executing [0@IVR 801:1] NoOp("SIP/classound-0000008a", "Executing 'Call group': group id - 1, announceoverride - , timeout - 20, mohclass - ")
+[Jul 16 12:39:04] VERBOSE[778743][C-0000004b] pbx_lua.c:     -- Executing [0@IVR 801:1] CELGenUserEvent("SIP/classound-0000008a", "CallGroup,701_FrontDesk,1,202")
+[Jul 16 12:39:04] VERBOSE[778743][C-0000004b] pbx_lua.c:     -- Executing [0@IVR 801:1] CELGenUserEvent("SIP/classound-0000008a", "Service,701_FrontDesk,1")
+[Jul 16 12:39:04] VERBOSE[778743][C-0000004b] pbx_lua.c:     -- Executing [0@IVR 801:1] Queue("SIP/classound-0000008a", "1,tCrE,,,20,,,,,,")
+[Jul 16 12:39:04] VERBOSE[778743][C-0000004b] app_queue.c:     -- Called Local/202@internalcalls
+[Jul 16 12:39:04] NOTICE[778989][C-0000004b] chan_sip.c: This function can only be used on SIP channels.
+[Jul 16 12:39:04] NOTICE[778989][C-0000004b] chan_sip.c: This function can only be used on SIP channels.
+[Jul 16 12:39:04] VERBOSE[778989][C-0000004b] pbx_lua.c:     -- Executing [202@internalcalls:1] NoOp("Local/202@internalcalls-00000027;2", "Dialing from classound/anonymous to number 202")
+[Jul 16 12:39:04] VERBOSE[778989][C-0000004b] pbx_lua.c:     -- Executing [202@internalcalls:1] NoOp("Local/202@internalcalls-00000027;2", "Calltype 'external'")
+[Jul 16 12:39:04] VERBOSE[778989][C-0000004b] pbx_lua.c:     -- Executing [202@internalcalls:1] NoOp("Local/202@internalcalls-00000027;2", "Dst features for active calltype/status - internal/default:
+�    -- 	 MEXT:0 BCF:1(VOICEMAIL) UCF:1(VOICEMAIL) SMSMCN:0 REJECT:0 EMAILMCN:0 FCF:0 TOUT:1(20) CW:1 MOBCONFIRMATION:0 RING:1(Ring1) ROAD:0")
+[Jul 16 12:39:04] NOTICE[778989][C-0000004b] chan_sip.c: This function can only be used on SIP channels.
+[Jul 16 12:39:04] NOTICE[778989][C-0000004b] chan_sip.c: This function can only be used on SIP channels.
+[Jul 16 12:39:04] VERBOSE[778989][C-0000004b] pbx_lua.c:     -- Executing [202@internalcalls:1] NoOp("Local/202@internalcalls-00000027;2", "Device state for 'SIP/202' is NOT_INUSE")
+[Jul 16 12:39:04] VERBOSE[778989][C-0000004b] pbx_lua.c:     -- Executing [202@internalcalls:1] CELGenUserEvent("Local/202@internalcalls-00000027;2", "App,Dial,SIP/202,")
+[Jul 16 12:39:04] VERBOSE[778989][C-0000004b] pbx_lua.c:     -- Executing [202@internalcalls:1] Dial("Local/202@internalcalls-00000027;2", "SIP/202,20,zb(predial^internalcall^1(,<http://127.0.0.1/Ring1.wav;info=external>,6,classound,,5550200,false))")
+[Jul 16 12:39:04] VERBOSE[778989][C-0000004b] netsock2.c:   == Using SIP VIDEO CoS mark 6
+[Jul 16 12:39:04] VERBOSE[778989][C-0000004b] netsock2.c:   == Using SIP RTP CoS mark 5
+[Jul 16 12:39:04] VERBOSE[778989][C-0000004b] app_stack.c:     -- SIP/202-0000008b Internal Gosub(predial,internalcall,1(,<http://127.0.0.1/Ring1.wav;info=external>,6,classound,,5550200,false)) start
+[Jul 16 12:39:04] NOTICE[778989][C-0000004b] app_stack.c: SIP/202-0000008b Abnormal 'Gosub(predial,internalcall,1(,<http://127.0.0.1/Ring1.wav;info=external>,6,classound,,5550200,false))' exit.  Popping routine return locations.
+[Jul 16 12:39:04] VERBOSE[778989][C-0000004b] app_dial.c:     -- Called SIP/202
+[Jul 16 12:39:04] VERBOSE[778743][C-0000004b] app_queue.c:     -- Local/202@internalcalls-00000027;1 connected line has changed. Saving it until answer for SIP/classound-0000008a
+[Jul 16 12:39:04] VERBOSE[778989][C-0000004b] app_dial.c:     -- SIP/202-0000008b is ringing
+[Jul 16 12:39:04] VERBOSE[778743][C-0000004b] app_queue.c:     -- Local/202@internalcalls-00000027;1 is ringing
+[Jul 16 12:39:24] VERBOSE[778743][C-0000004b] app_queue.c:     -- Nobody picked up in 20000 ms
+[Jul 16 12:39:24] VERBOSE[778989][C-0000004b] pbx.c:   == Spawn extension (internalcalls, 202, 1) exited non-zero on 'Local/202@internalcalls-00000027;2'
+[Jul 16 12:39:24] VERBOSE[778743][C-0000004b] pbx_lua.c:     -- Executing [0@IVR 801:1] NoOp("SIP/classound-0000008a", "Executing 'Playback': sound - "custom/Front_Desk_Voicemail", waitDigits - n, opts - ")
+[Jul 16 12:39:24] VERBOSE[778743][C-0000004b] pbx_lua.c:     -- Executing [0@IVR 801:1] Playback("SIP/classound-0000008a", "custom/Front_Desk_Voicemail,")
+[Jul 16 12:39:24] VERBOSE[778743][C-0000004b] file.c:     -- <SIP/classound-0000008a> Playing 'custom/Front_Desk_Voicemail.alaw' (language 'en')
+[Jul 16 12:39:27] VERBOSE[778743][C-0000004b] pbx.c:   == Spawn extension (IVR 801, 0, 1) exited non-zero on 'SIP/classound-0000008a'
+[Jul 16 12:39:27] VERBOSE[778743][C-0000004b] app_stack.c:     -- SIP/classound-0000008a Internal Gosub(hdlr,service,1) start
+[Jul 16 12:39:27] VERBOSE[778743][C-0000004b] pbx_lua.c:     -- Executing [service@hdlr:1] NoOp("SIP/classound-0000008a", "Notification for mwi manager was not sent")
+[Jul 16 12:39:27] NOTICE[778743][C-0000004b] app_stack.c: SIP/classound-0000008a Abnormal 'Gosub(hdlr,service,1)' exit.  Popping routine return locations.
+[Jul 16 12:39:27] NOTICE[778743][C-0000004b] chan_sip.c: trunk_calls_count decremented and now its value is 0
+[Jul 16 12:39:27] VERBOSE[4817] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 12:39:32] NOTICE[4847][C-0000004c] chan_sip.c: Number Normalization for peer 'classound': Before - anonymous; After - anonymous
+[Jul 16 12:39:32] VERBOSE[4847][C-0000004c] netsock2.c:   == Using SIP RTP CoS mark 5
+[Jul 16 12:39:32] NOTICE[4847][C-0000004c] chan_sip.c: trunk_calls_count incremented and now its value is: 1
+[Jul 16 12:39:32] NOTICE[779049][C-0000004c] chan_sip.c: Number Normalization for peer 'classound': Before - anonymous; After - anonymous
+[Jul 16 12:39:32] VERBOSE[779049][C-0000004c] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-0000008c", "Set call class to 'unknown'(0)")
+[Jul 16 12:39:32] VERBOSE[779049][C-0000004c] pbx_lua.c:     -- Executing [+5550100100@classound:1] CELGenUserEvent("SIP/classound-0000008c", "TrunkCall,incoming,classound")
+[Jul 16 12:39:32] VERBOSE[779049][C-0000004c] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-0000008c", "Executing 'Lookup caller name': PBID - all, number - anonymous")
+[Jul 16 12:39:32] NOTICE[779049][C-0000004c] chan_sip.c: Number Normalization for peer 'classound': Before - anonymous; After - anonymous
+[Jul 16 12:39:32] VERBOSE[779049][C-0000004c] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-0000008c", "Search number not found in the contact storages")
+[Jul 16 12:39:32] VERBOSE[779049][C-0000004c] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-0000008c", "Set Caller num to "anonymous" desttype "inc"")
+[Jul 16 12:39:32] VERBOSE[779049][C-0000004c] pbx_lua.c:     -- Executing [+5550100100@classound:1] CELGenUserEvent("SIP/classound-0000008c", "LookUp,QW5vbnltb3Vz,,anonymous,,inc")
+[Jul 16 12:39:32] VERBOSE[779049][C-0000004c] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-0000008c", "Set Caller name to "Anonymous" desttype "inc"")
+[Jul 16 12:39:32] VERBOSE[779049][C-0000004c] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-0000008c", "Executing 'Jump to': exten - IVR, context - IVR 801, priority - 1")
+[Jul 16 12:39:32] VERBOSE[779049][C-0000004c] pbx_lua.c:     -- Executing [+5550100100@classound:1] Goto("SIP/classound-0000008c", "IVR 801,IVR,1")
+[Jul 16 12:39:32] VERBOSE[779049][C-0000004c] pbx.c:     -- Goto (IVR 801,IVR,1)
+[Jul 16 12:39:32] VERBOSE[779049][C-0000004c] pbx_lua.c:     -- Executing [IVR@IVR 801:1] NoOp("SIP/classound-0000008c", "Executing 'Playback': sound - "custom/DayTimeMainMenu", waitDigits - y, opts - ")
+[Jul 16 12:39:32] VERBOSE[779049][C-0000004c] pbx_lua.c:     -- Executing [IVR@IVR 801:1] Background("SIP/classound-0000008c", "custom/DayTimeMainMenu,")
+[Jul 16 12:39:32] VERBOSE[779049][C-0000004c] file.c:     -- <SIP/classound-0000008c> Playing 'custom/DayTimeMainMenu.alaw' (language 'en')
+[Jul 16 12:39:35] DTMF[779049][C-0000004c] channel.c: DTMF begin '3' received on SIP/classound-0000008c
+[Jul 16 12:39:35] DTMF[779049][C-0000004c] channel.c: DTMF begin ignored '3' on SIP/classound-0000008c
+[Jul 16 12:39:35] DTMF[779049][C-0000004c] channel.c: DTMF end '3' received on SIP/classound-0000008c, duration 80 ms
+[Jul 16 12:39:35] DTMF[779049][C-0000004c] channel.c: DTMF end passthrough '3' on SIP/classound-0000008c
+[Jul 16 12:39:40] VERBOSE[779049][C-0000004c] pbx.c:   == CDR updated on SIP/classound-0000008c
+[Jul 16 12:39:40] VERBOSE[779049][C-0000004c] pbx_lua.c:     -- Executing [3@IVR 801:1] NoOp("SIP/classound-0000008c", "Executing 'Dial the phone': number - 201, timeout - , options - music instead ring, announce - ")
+[Jul 16 12:39:40] VERBOSE[779049][C-0000004c] pbx_lua.c:     -- Executing [3@IVR 801:1] NoOp("SIP/classound-0000008c", "Dialing from classound/anonymous to number 201")
+[Jul 16 12:39:40] VERBOSE[779049][C-0000004c] pbx_lua.c:     -- Executing [3@IVR 801:1] NoOp("SIP/classound-0000008c", "Calltype 'external'")
+[Jul 16 12:39:40] VERBOSE[779049][C-0000004c] pbx_lua.c:     -- Executing [3@IVR 801:1] NoOp("SIP/classound-0000008c", "Dst features for active calltype/status - internal/default:
+�    -- 	 MEXT:0 BCF:1(VOICEMAIL) UCF:1(VOICEMAIL) SMSMCN:0 REJECT:0 EMAILMCN:0 FCF:0 TOUT:1(20) CW:1 MOBCONFIRMATION:0 RING:1(Ring1) ROAD:0")
+[Jul 16 12:39:40] VERBOSE[779049][C-0000004c] pbx_lua.c:     -- Executing [3@IVR 801:1] NoOp("SIP/classound-0000008c", "Device state for 'SIP/201' is NOT_INUSE")
+[Jul 16 12:39:40] VERBOSE[779049][C-0000004c] pbx_lua.c:     -- Executing [3@IVR 801:1] CELGenUserEvent("SIP/classound-0000008c", "App,Dial,SIP/201,")
+[Jul 16 12:39:40] VERBOSE[779049][C-0000004c] pbx_lua.c:     -- Executing [3@IVR 801:1] Dial("SIP/classound-0000008c", "SIP/201,20,zb(predial^internalcall^1(,<http://127.0.0.1/Ring1.wav;info=external>,6,classound,,5550100,false))")
+[Jul 16 12:39:40] VERBOSE[779049][C-0000004c] netsock2.c:   == Using SIP VIDEO CoS mark 6
+[Jul 16 12:39:40] VERBOSE[779049][C-0000004c] netsock2.c:   == Using SIP RTP CoS mark 5
+[Jul 16 12:39:40] VERBOSE[779049][C-0000004c] app_stack.c:     -- SIP/201-0000008d Internal Gosub(predial,internalcall,1(,<http://127.0.0.1/Ring1.wav;info=external>,6,classound,,5550100,false)) start
+[Jul 16 12:39:40] NOTICE[779049][C-0000004c] app_stack.c: SIP/201-0000008d Abnormal 'Gosub(predial,internalcall,1(,<http://127.0.0.1/Ring1.wav;info=external>,6,classound,,5550100,false))' exit.  Popping routine return locations.
+[Jul 16 12:39:40] NOTICE[779049][C-0000004c] chan_sip.c: Peer classound does not support Direct RTP
+[Jul 16 12:39:40] VERBOSE[779049][C-0000004c] app_dial.c:     -- Called SIP/201
+[Jul 16 12:39:40] VERBOSE[779049][C-0000004c] app_dial.c:     -- SIP/201-0000008d is ringing
+[Jul 16 12:39:49] VERBOSE[779096] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 12:39:50] VERBOSE[779049][C-0000004c] app_dial.c:     -- SIP/201-0000008d is ringing
+[Jul 16 12:39:50] VERBOSE[779117] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 12:39:51] VERBOSE[779172] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 12:39:51] VERBOSE[779176] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 12:39:52] VERBOSE[779198] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 12:39:56] NOTICE[4847][C-0000004c] chan_sip.c: Peer classound does not support Direct RTP
+[Jul 16 12:39:56] NOTICE[4847][C-0000004c] chan_sip.c: Peer classound does not support Direct RTP
+[Jul 16 12:39:56] VERBOSE[779049][C-0000004c] app_dial.c:     -- SIP/201-0000008d answered SIP/classound-0000008c
+[Jul 16 12:40:11] DTMF[779049][C-0000004c] channel.c: DTMF begin '1' received on SIP/classound-0000008c
+[Jul 16 12:40:11] DTMF[779049][C-0000004c] channel.c: DTMF begin ignored '1' on SIP/classound-0000008c
+[Jul 16 12:40:11] DTMF[779049][C-0000004c] channel.c: DTMF end '1' received on SIP/classound-0000008c, duration 45 ms
+[Jul 16 12:40:11] DTMF[779049][C-0000004c] channel.c: DTMF end passthrough '1' on SIP/classound-0000008c
+[Jul 16 12:41:11] VERBOSE[779049][C-0000004c] app_stack.c:     -- SIP/classound-0000008c Internal Gosub(hdlr,internal,1) start
+[Jul 16 12:41:11] VERBOSE[779049][C-0000004c] pbx_lua.c:     -- Executing [internal@hdlr:1] NoOp("SIP/classound-0000008c", "Missed call notification was not sent: call status is ANSWERED")
+[Jul 16 12:41:11] NOTICE[779049][C-0000004c] app_stack.c: SIP/classound-0000008c Abnormal 'Gosub(hdlr,internal,1)' exit.  Popping routine return locations.
+[Jul 16 12:41:11] VERBOSE[779049][C-0000004c] pbx.c:   == Spawn extension (IVR 801, 3, 1) exited non-zero on 'SIP/classound-0000008c'
+[Jul 16 12:41:11] NOTICE[779049][C-0000004c] chan_sip.c: trunk_calls_count decremented and now its value is 0
+[Jul 16 12:42:27] VERBOSE[4817] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 12:45:27] VERBOSE[4817] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 12:48:27] VERBOSE[4817] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 12:49:31] NOTICE[4847][C-0000004d] chan_sip.c: Number Normalization for peer 'classound': Before - +17804055785; After - +17804055785
+[Jul 16 12:49:31] VERBOSE[4847][C-0000004d] netsock2.c:   == Using SIP RTP CoS mark 5
+[Jul 16 12:49:31] NOTICE[4847][C-0000004d] chan_sip.c: trunk_calls_count incremented and now its value is: 1
+[Jul 16 12:49:31] VERBOSE[782513][C-0000004d] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-0000008e", "Set call class to 'mobile'(4)")
+[Jul 16 12:49:31] VERBOSE[782513][C-0000004d] pbx_lua.c:     -- Executing [+5550100100@classound:1] CELGenUserEvent("SIP/classound-0000008e", "TrunkCall,incoming,classound")
+[Jul 16 12:49:31] VERBOSE[782513][C-0000004d] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-0000008e", "Executing 'Lookup caller name': PBID - all, number - +17804055785")
+[Jul 16 12:49:32] VERBOSE[782513][C-0000004d] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-0000008e", "Source external service, search number found")
+[Jul 16 12:49:32] VERBOSE[782513][C-0000004d] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-0000008e", "Set Caller num to "+17804055785" desttype "inc"")
+[Jul 16 12:49:32] VERBOSE[782513][C-0000004d] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-0000008e", "Try save from_name: ACME CORP HQ")
+[Jul 16 12:49:32] VERBOSE[782513][C-0000004d] pbx_lua.c:     -- Executing [+5550100100@classound:1] CELGenUserEvent("SIP/classound-0000008e", "LookUp,QUNNRSBDT1JQIEhR,,+17804055785,,inc")
+[Jul 16 12:49:32] VERBOSE[782513][C-0000004d] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-0000008e", "Set Caller name to "ACME CORP HQ" desttype "inc"")
+[Jul 16 12:49:32] VERBOSE[782513][C-0000004d] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-0000008e", "Executing 'Jump to': exten - IVR, context - IVR 801, priority - 1")
+[Jul 16 12:49:32] VERBOSE[782513][C-0000004d] pbx_lua.c:     -- Executing [+5550100100@classound:1] Goto("SIP/classound-0000008e", "IVR 801,IVR,1")
+[Jul 16 12:49:32] VERBOSE[782513][C-0000004d] pbx.c:     -- Goto (IVR 801,IVR,1)
+[Jul 16 12:49:32] VERBOSE[782513][C-0000004d] pbx_lua.c:     -- Executing [IVR@IVR 801:1] NoOp("SIP/classound-0000008e", "Executing 'Playback': sound - "custom/DayTimeMainMenu", waitDigits - y, opts - ")
+[Jul 16 12:49:32] VERBOSE[782513][C-0000004d] pbx_lua.c:     -- Executing [IVR@IVR 801:1] Background("SIP/classound-0000008e", "custom/DayTimeMainMenu,")
+[Jul 16 12:49:33] VERBOSE[782513][C-0000004d] file.c:     -- <SIP/classound-0000008e> Playing 'custom/DayTimeMainMenu.alaw' (language 'en')
+[Jul 16 12:49:53] DTMF[782513][C-0000004d] channel.c: DTMF begin '4' received on SIP/classound-0000008e
+[Jul 16 12:49:53] DTMF[782513][C-0000004d] channel.c: DTMF begin ignored '4' on SIP/classound-0000008e
+[Jul 16 12:49:53] DTMF[782513][C-0000004d] channel.c: DTMF end '4' received on SIP/classound-0000008e, duration 70 ms
+[Jul 16 12:49:53] DTMF[782513][C-0000004d] channel.c: DTMF end passthrough '4' on SIP/classound-0000008e
+[Jul 16 12:49:58] VERBOSE[782513][C-0000004d] pbx.c:   == CDR updated on SIP/classound-0000008e
+[Jul 16 12:49:58] VERBOSE[782513][C-0000004d] pbx_lua.c:     -- Executing [4@IVR 801:1] NoOp("SIP/classound-0000008e", "Executing 'Call group': group id - 1, announceoverride - , timeout - 20, mohclass - ")
+[Jul 16 12:49:58] VERBOSE[782513][C-0000004d] pbx_lua.c:     -- Executing [4@IVR 801:1] CELGenUserEvent("SIP/classound-0000008e", "CallGroup,701_FrontDesk,1,202")
+[Jul 16 12:49:58] VERBOSE[782513][C-0000004d] pbx_lua.c:     -- Executing [4@IVR 801:1] CELGenUserEvent("SIP/classound-0000008e", "Service,701_FrontDesk,1")
+[Jul 16 12:49:58] VERBOSE[782513][C-0000004d] pbx_lua.c:     -- Executing [4@IVR 801:1] Queue("SIP/classound-0000008e", "1,tCrE,,,20,,,,,,")
+[Jul 16 12:49:58] VERBOSE[782513][C-0000004d] app_queue.c:     -- Called Local/202@internalcalls
+[Jul 16 12:49:58] NOTICE[782552][C-0000004d] chan_sip.c: This function can only be used on SIP channels.
+[Jul 16 12:49:58] NOTICE[782552][C-0000004d] chan_sip.c: This function can only be used on SIP channels.
+[Jul 16 12:49:58] VERBOSE[782552][C-0000004d] pbx_lua.c:     -- Executing [202@internalcalls:1] NoOp("Local/202@internalcalls-00000028;2", "Dialing from classound/+17804055785 to number 202")
+[Jul 16 12:49:58] VERBOSE[782552][C-0000004d] pbx_lua.c:     -- Executing [202@internalcalls:1] NoOp("Local/202@internalcalls-00000028;2", "Calltype 'external'")
+[Jul 16 12:49:58] VERBOSE[782552][C-0000004d] pbx_lua.c:     -- Executing [202@internalcalls:1] NoOp("Local/202@internalcalls-00000028;2", "Dst features for active calltype/status - internal/default:
+�    -- 	 MEXT:0 BCF:1(VOICEMAIL) UCF:1(VOICEMAIL) SMSMCN:0 REJECT:0 EMAILMCN:0 FCF:0 TOUT:1(20) CW:1 MOBCONFIRMATION:0 RING:1(Ring1) ROAD:0")
+[Jul 16 12:49:58] NOTICE[782552][C-0000004d] chan_sip.c: This function can only be used on SIP channels.
+[Jul 16 12:49:58] NOTICE[782552][C-0000004d] chan_sip.c: This function can only be used on SIP channels.
+[Jul 16 12:49:58] VERBOSE[782552][C-0000004d] pbx_lua.c:     -- Executing [202@internalcalls:1] NoOp("Local/202@internalcalls-00000028;2", "Device state for 'SIP/202' is NOT_INUSE")
+[Jul 16 12:49:58] VERBOSE[782552][C-0000004d] pbx_lua.c:     -- Executing [202@internalcalls:1] CELGenUserEvent("Local/202@internalcalls-00000028;2", "App,Dial,SIP/202,")
+[Jul 16 12:49:58] VERBOSE[782552][C-0000004d] pbx_lua.c:     -- Executing [202@internalcalls:1] Dial("Local/202@internalcalls-00000028;2", "SIP/202,20,zb(predial^internalcall^1(,<http://127.0.0.1/Ring1.wav;info=external>,6,classound,,5550200,false))")
+[Jul 16 12:49:58] VERBOSE[782552][C-0000004d] netsock2.c:   == Using SIP VIDEO CoS mark 6
+[Jul 16 12:49:58] VERBOSE[782552][C-0000004d] netsock2.c:   == Using SIP RTP CoS mark 5
+[Jul 16 12:49:58] VERBOSE[782552][C-0000004d] app_stack.c:     -- SIP/202-0000008f Internal Gosub(predial,internalcall,1(,<http://127.0.0.1/Ring1.wav;info=external>,6,classound,,5550200,false)) start
+[Jul 16 12:49:58] NOTICE[782552][C-0000004d] app_stack.c: SIP/202-0000008f Abnormal 'Gosub(predial,internalcall,1(,<http://127.0.0.1/Ring1.wav;info=external>,6,classound,,5550200,false))' exit.  Popping routine return locations.
+[Jul 16 12:49:58] VERBOSE[782552][C-0000004d] app_dial.c:     -- Called SIP/202
+[Jul 16 12:49:58] VERBOSE[782513][C-0000004d] app_queue.c:     -- Local/202@internalcalls-00000028;1 connected line has changed. Saving it until answer for SIP/classound-0000008e
+[Jul 16 12:49:58] VERBOSE[782552][C-0000004d] app_dial.c:     -- SIP/202-0000008f is ringing
+[Jul 16 12:49:58] VERBOSE[782513][C-0000004d] app_queue.c:     -- Local/202@internalcalls-00000028;1 is ringing
+[Jul 16 12:50:18] VERBOSE[782513][C-0000004d] app_queue.c:     -- Nobody picked up in 20000 ms
+[Jul 16 12:50:18] VERBOSE[782552][C-0000004d] pbx.c:   == Spawn extension (internalcalls, 202, 1) exited non-zero on 'Local/202@internalcalls-00000028;2'
+[Jul 16 12:50:18] VERBOSE[782513][C-0000004d] pbx_lua.c:     -- Executing [4@IVR 801:1] NoOp("SIP/classound-0000008e", "Executing 'Playback': sound - "custom/Front_Desk_Voicemail", waitDigits - n, opts - ")
+[Jul 16 12:50:18] VERBOSE[782513][C-0000004d] pbx_lua.c:     -- Executing [4@IVR 801:1] Playback("SIP/classound-0000008e", "custom/Front_Desk_Voicemail,")
+[Jul 16 12:50:18] VERBOSE[782513][C-0000004d] file.c:     -- <SIP/classound-0000008e> Playing 'custom/Front_Desk_Voicemail.alaw' (language 'en')
+[Jul 16 12:50:26] VERBOSE[782513][C-0000004d] pbx_lua.c:     -- Executing [4@IVR 801:1] NoOp("SIP/classound-0000008e", "Executing 'Go to voicemail': mailbox - 900, options - ")
+[Jul 16 12:50:26] VERBOSE[782513][C-0000004d] pbx_lua.c:     -- Executing [4@IVR 801:1] Set("SIP/classound-0000008e", "JITTERBUFFER(adaptive)=500,1000,40")
+[Jul 16 12:50:26] VERBOSE[782513][C-0000004d] pbx_lua.c:     -- Executing [4@IVR 801:1] CELGenUserEvent("SIP/classound-0000008e", "SendFakeCalleeUpdate,900")
+[Jul 16 12:50:26] VERBOSE[782513][C-0000004d] pbx_lua.c:     -- Executing [4@IVR 801:1] CELGenUserEvent("SIP/classound-0000008e", "App,VoiceMail,900@,")
+[Jul 16 12:50:26] VERBOSE[782513][C-0000004d] pbx_lua.c:     -- Executing [4@IVR 801:1] VoiceMail("SIP/classound-0000008e", "900@,s")
+[Jul 16 12:50:26] VERBOSE[782513][C-0000004d] file.c:     -- <SIP/classound-0000008e> Playing 'beep.alaw' (language 'en')
+[Jul 16 12:50:26] VERBOSE[782513][C-0000004d] app_voicemail.c:     -- Recording the message
+[Jul 16 12:50:26] VERBOSE[782513][C-0000004d] app.c:     -- x=0, open writing:  /var/spool/callweaver/voicemail/900/tmp/NjSlc6 format: alaw, 0xffff746f5de0
+[Jul 16 12:50:28] VERBOSE[782513][C-0000004d] app.c:     -- User hung up
+[Jul 16 12:50:28] VERBOSE[782513][C-0000004d] app_voicemail.c:     -- Recording was 0 seconds long but needs to be at least 1 - abandoning
+[Jul 16 12:50:28] VERBOSE[782513][C-0000004d] app_stack.c:     -- SIP/classound-0000008e Internal Gosub(hdlr,service,1) start
+[Jul 16 12:50:28] VERBOSE[782513][C-0000004d] pbx_lua.c:     -- Executing [service@hdlr:1] NoOp("SIP/classound-0000008e", "Notification for mwi manager was not sent")
+[Jul 16 12:50:28] NOTICE[782513][C-0000004d] app_stack.c: SIP/classound-0000008e Abnormal 'Gosub(hdlr,service,1)' exit.  Popping routine return locations.
+[Jul 16 12:50:28] NOTICE[782513][C-0000004d] chan_sip.c: trunk_calls_count decremented and now its value is 0
+[Jul 16 12:50:47] NOTICE[4847][C-0000004e] chan_sip.c: Number Normalization for peer 'classound': Before - +17804055785; After - +17804055785
+[Jul 16 12:50:47] VERBOSE[4847][C-0000004e] netsock2.c:   == Using SIP RTP CoS mark 5
+[Jul 16 12:50:47] NOTICE[4847][C-0000004e] chan_sip.c: trunk_calls_count incremented and now its value is: 1
+[Jul 16 12:50:47] VERBOSE[782965][C-0000004e] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-00000090", "Set call class to 'mobile'(4)")
+[Jul 16 12:50:47] VERBOSE[782965][C-0000004e] pbx_lua.c:     -- Executing [+5550100100@classound:1] CELGenUserEvent("SIP/classound-00000090", "TrunkCall,incoming,classound")
+[Jul 16 12:50:47] VERBOSE[782965][C-0000004e] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-00000090", "Executing 'Lookup caller name': PBID - all, number - +17804055785")
+[Jul 16 12:50:49] VERBOSE[782965][C-0000004e] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-00000090", "Source external service, search number found")
+[Jul 16 12:50:49] VERBOSE[782965][C-0000004e] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-00000090", "Set Caller num to "+17804055785" desttype "inc"")
+[Jul 16 12:50:49] VERBOSE[782965][C-0000004e] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-00000090", "Try save from_name: ACME CORP HQ")
+[Jul 16 12:50:49] VERBOSE[782965][C-0000004e] pbx_lua.c:     -- Executing [+5550100100@classound:1] CELGenUserEvent("SIP/classound-00000090", "LookUp,QUNNRSBDT1JQIEhR,,+17804055785,,inc")
+[Jul 16 12:50:49] VERBOSE[782965][C-0000004e] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-00000090", "Set Caller name to "ACME CORP HQ" desttype "inc"")
+[Jul 16 12:50:49] VERBOSE[782965][C-0000004e] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-00000090", "Executing 'Jump to': exten - IVR, context - IVR 801, priority - 1")
+[Jul 16 12:50:49] VERBOSE[782965][C-0000004e] pbx_lua.c:     -- Executing [+5550100100@classound:1] Goto("SIP/classound-00000090", "IVR 801,IVR,1")
+[Jul 16 12:50:49] VERBOSE[782965][C-0000004e] pbx.c:     -- Goto (IVR 801,IVR,1)
+[Jul 16 12:50:49] VERBOSE[782965][C-0000004e] pbx_lua.c:     -- Executing [IVR@IVR 801:1] NoOp("SIP/classound-00000090", "Executing 'Playback': sound - "custom/DayTimeMainMenu", waitDigits - y, opts - ")
+[Jul 16 12:50:49] VERBOSE[782965][C-0000004e] pbx_lua.c:     -- Executing [IVR@IVR 801:1] Background("SIP/classound-00000090", "custom/DayTimeMainMenu,")
+[Jul 16 12:50:49] VERBOSE[782965][C-0000004e] file.c:     -- <SIP/classound-00000090> Playing 'custom/DayTimeMainMenu.alaw' (language 'en')
+[Jul 16 12:50:53] DTMF[782965][C-0000004e] channel.c: DTMF begin '0' received on SIP/classound-00000090
+[Jul 16 12:50:53] DTMF[782965][C-0000004e] channel.c: DTMF begin ignored '0' on SIP/classound-00000090
+[Jul 16 12:50:53] DTMF[782965][C-0000004e] channel.c: DTMF end '0' received on SIP/classound-00000090, duration 70 ms
+[Jul 16 12:50:53] DTMF[782965][C-0000004e] channel.c: DTMF end passthrough '0' on SIP/classound-00000090
+[Jul 16 12:50:58] VERBOSE[782965][C-0000004e] pbx.c:   == CDR updated on SIP/classound-00000090
+[Jul 16 12:50:58] VERBOSE[782965][C-0000004e] pbx_lua.c:     -- Executing [0@IVR 801:1] NoOp("SIP/classound-00000090", "Executing 'Call group': group id - 1, announceoverride - , timeout - 20, mohclass - ")
+[Jul 16 12:50:58] VERBOSE[782965][C-0000004e] pbx_lua.c:     -- Executing [0@IVR 801:1] CELGenUserEvent("SIP/classound-00000090", "CallGroup,701_FrontDesk,1,202")
+[Jul 16 12:50:58] VERBOSE[782965][C-0000004e] pbx_lua.c:     -- Executing [0@IVR 801:1] CELGenUserEvent("SIP/classound-00000090", "Service,701_FrontDesk,1")
+[Jul 16 12:50:58] VERBOSE[782965][C-0000004e] pbx_lua.c:     -- Executing [0@IVR 801:1] Queue("SIP/classound-00000090", "1,tCrE,,,20,,,,,,")
+[Jul 16 12:50:58] VERBOSE[782965][C-0000004e] app_queue.c:     -- Called Local/202@internalcalls
+[Jul 16 12:50:58] NOTICE[782984][C-0000004e] chan_sip.c: This function can only be used on SIP channels.
+[Jul 16 12:50:58] NOTICE[782984][C-0000004e] chan_sip.c: This function can only be used on SIP channels.
+[Jul 16 12:50:58] VERBOSE[782984][C-0000004e] pbx_lua.c:     -- Executing [202@internalcalls:1] NoOp("Local/202@internalcalls-00000029;2", "Dialing from classound/+17804055785 to number 202")
+[Jul 16 12:50:58] VERBOSE[782984][C-0000004e] pbx_lua.c:     -- Executing [202@internalcalls:1] NoOp("Local/202@internalcalls-00000029;2", "Calltype 'external'")
+[Jul 16 12:50:58] VERBOSE[782984][C-0000004e] pbx_lua.c:     -- Executing [202@internalcalls:1] NoOp("Local/202@internalcalls-00000029;2", "Dst features for active calltype/status - internal/default:
+�    -- 	 MEXT:0 BCF:1(VOICEMAIL) UCF:1(VOICEMAIL) SMSMCN:0 REJECT:0 EMAILMCN:0 FCF:0 TOUT:1(20) CW:1 MOBCONFIRMATION:0 RING:1(Ring1) ROAD:0")
+[Jul 16 12:50:58] NOTICE[782984][C-0000004e] chan_sip.c: This function can only be used on SIP channels.
+[Jul 16 12:50:58] NOTICE[782984][C-0000004e] chan_sip.c: This function can only be used on SIP channels.
+[Jul 16 12:50:58] VERBOSE[782984][C-0000004e] pbx_lua.c:     -- Executing [202@internalcalls:1] NoOp("Local/202@internalcalls-00000029;2", "Device state for 'SIP/202' is NOT_INUSE")
+[Jul 16 12:50:58] VERBOSE[782984][C-0000004e] pbx_lua.c:     -- Executing [202@internalcalls:1] CELGenUserEvent("Local/202@internalcalls-00000029;2", "App,Dial,SIP/202,")
+[Jul 16 12:50:58] VERBOSE[782984][C-0000004e] pbx_lua.c:     -- Executing [202@internalcalls:1] Dial("Local/202@internalcalls-00000029;2", "SIP/202,20,zb(predial^internalcall^1(,<http://127.0.0.1/Ring1.wav;info=external>,6,classound,,5550200,false))")
+[Jul 16 12:50:58] VERBOSE[782984][C-0000004e] netsock2.c:   == Using SIP VIDEO CoS mark 6
+[Jul 16 12:50:58] VERBOSE[782984][C-0000004e] netsock2.c:   == Using SIP RTP CoS mark 5
+[Jul 16 12:50:58] VERBOSE[782984][C-0000004e] app_stack.c:     -- SIP/202-00000091 Internal Gosub(predial,internalcall,1(,<http://127.0.0.1/Ring1.wav;info=external>,6,classound,,5550200,false)) start
+[Jul 16 12:50:58] NOTICE[782984][C-0000004e] app_stack.c: SIP/202-00000091 Abnormal 'Gosub(predial,internalcall,1(,<http://127.0.0.1/Ring1.wav;info=external>,6,classound,,5550200,false))' exit.  Popping routine return locations.
+[Jul 16 12:50:58] VERBOSE[782984][C-0000004e] app_dial.c:     -- Called SIP/202
+[Jul 16 12:50:58] VERBOSE[782965][C-0000004e] app_queue.c:     -- Local/202@internalcalls-00000029;1 connected line has changed. Saving it until answer for SIP/classound-00000090
+[Jul 16 12:50:58] VERBOSE[782984][C-0000004e] app_dial.c:     -- SIP/202-00000091 is ringing
+[Jul 16 12:50:58] VERBOSE[782965][C-0000004e] app_queue.c:     -- Local/202@internalcalls-00000029;1 is ringing
+[Jul 16 12:51:18] VERBOSE[782965][C-0000004e] app_queue.c:     -- Nobody picked up in 20000 ms
+[Jul 16 12:51:18] VERBOSE[782984][C-0000004e] pbx.c:   == Spawn extension (internalcalls, 202, 1) exited non-zero on 'Local/202@internalcalls-00000029;2'
+[Jul 16 12:51:18] VERBOSE[782965][C-0000004e] pbx_lua.c:     -- Executing [0@IVR 801:1] NoOp("SIP/classound-00000090", "Executing 'Playback': sound - "custom/Front_Desk_Voicemail", waitDigits - n, opts - ")
+[Jul 16 12:51:18] VERBOSE[782965][C-0000004e] pbx_lua.c:     -- Executing [0@IVR 801:1] Playback("SIP/classound-00000090", "custom/Front_Desk_Voicemail,")
+[Jul 16 12:51:18] VERBOSE[782965][C-0000004e] file.c:     -- <SIP/classound-00000090> Playing 'custom/Front_Desk_Voicemail.alaw' (language 'en')
+[Jul 16 12:51:21] VERBOSE[782965][C-0000004e] pbx.c:   == Spawn extension (IVR 801, 0, 1) exited non-zero on 'SIP/classound-00000090'
+[Jul 16 12:51:21] VERBOSE[782965][C-0000004e] app_stack.c:     -- SIP/classound-00000090 Internal Gosub(hdlr,service,1) start
+[Jul 16 12:51:21] VERBOSE[782965][C-0000004e] pbx_lua.c:     -- Executing [service@hdlr:1] NoOp("SIP/classound-00000090", "Notification for mwi manager was not sent")
+[Jul 16 12:51:21] NOTICE[782965][C-0000004e] app_stack.c: SIP/classound-00000090 Abnormal 'Gosub(hdlr,service,1)' exit.  Popping routine return locations.
+[Jul 16 12:51:21] NOTICE[782965][C-0000004e] chan_sip.c: trunk_calls_count decremented and now its value is 0
+[Jul 16 12:51:27] VERBOSE[4817] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 12:53:46] VERBOSE[783905] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 12:53:47] VERBOSE[783926] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 12:53:47] VERBOSE[783962] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 12:53:56] VERBOSE[784009] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 12:54:05] VERBOSE[4847][C-0000004f] netsock2.c:   == Using SIP VIDEO CoS mark 6
+[Jul 16 12:54:05] VERBOSE[4847][C-0000004f] netsock2.c:   == Using SIP RTP CoS mark 5
+[Jul 16 12:54:05] VERBOSE[784277][C-0000004f] pbx_lua.c:     -- Executing [5550100400@Sales DialPlan:1] NoOp("SIP/201-00000092", "=== DEBUG: ===")
+[Jul 16 12:54:05] VERBOSE[784277][C-0000004f] pbx_lua.c:     -- Executing [5550100400@Sales DialPlan:1] NoOp("SIP/201-00000092", "Matched Dialplan Sales DialPlan")
+[Jul 16 12:54:05] VERBOSE[784277][C-0000004f] pbx_lua.c:     -- Executing [5550100400@Sales DialPlan:1] NoOp("SIP/201-00000092", "Channel: SIP/201-00000092")
+[Jul 16 12:54:05] VERBOSE[784277][C-0000004f] pbx_lua.c:     -- Executing [5550100400@Sales DialPlan:1] NoOp("SIP/201-00000092", "Extension: 5550100400")
+[Jul 16 12:54:05] VERBOSE[784277][C-0000004f] pbx_lua.c:     -- Executing [5550100400@Sales DialPlan:1] NoOp("SIP/201-00000092", "=== END DEBUG ===")
+[Jul 16 12:54:05] VERBOSE[784277][C-0000004f] pbx_lua.c:     -- Executing [5550100400@Sales DialPlan:1] NoOp("SIP/201-00000092", "Executing 'Set': CALLERID(number) - +5550100100")
+[Jul 16 12:54:05] VERBOSE[784277][C-0000004f] pbx_lua.c:     -- Executing [5550100400@Sales DialPlan:1] NoOp("SIP/201-00000092", "Executing 'Set': CALLERID(name) - Springfield City Hall")
+[Jul 16 12:54:05] VERBOSE[784277][C-0000004f] pbx_lua.c:     -- Executing [5550100400@Sales DialPlan:1] NoOp("SIP/201-00000092", "Executing 'Set': SIP_CODECS - alaw,ulaw")
+[Jul 16 12:54:05] VERBOSE[784277][C-0000004f] pbx_lua.c:     -- Executing [5550100400@Sales DialPlan:1] NoOp("SIP/201-00000092", "Executing 'Record call': record type - pbx, email/user - , options - b")
+[Jul 16 12:54:05] VERBOSE[784277][C-0000004f] pbx_lua.c:     -- Executing [5550100400@Sales DialPlan:1] CELGenUserEvent("SIP/201-00000092", "App,Monitor,pbx,,b,rt,")
+[Jul 16 12:54:05] VERBOSE[784277][C-0000004f] pbx_lua.c:     -- Executing [5550100400@Sales DialPlan:1] Monitor("SIP/201-00000092", "alaw,/tmp/2026.07.16-12.54.05-+5550100100-5550100400[pbx]-74f02,mb,6,wav,yes,rt,")
+[Jul 16 12:54:05] VERBOSE[784277][C-0000004f] pbx_lua.c:     -- Executing [5550100400@Sales DialPlan:1] NoOp("SIP/201-00000092", "Executing 'Dial the trunk': number - +15550100400, tr_name - classound, callclass - auto")
+[Jul 16 12:54:05] VERBOSE[784277][C-0000004f] pbx_lua.c:     -- Executing [5550100400@Sales DialPlan:1] NoOp("SIP/201-00000092", "Set call class to 'mobile'(4)")
+[Jul 16 12:54:05] VERBOSE[784277][C-0000004f] pbx_lua.c:     -- Executing [5550100400@Sales DialPlan:1] NoOp("SIP/201-00000092", "Executing 'Lookup called name': PBID - all, number - +15550100400")
+[Jul 16 12:54:07] VERBOSE[784277][C-0000004f] pbx_lua.c:     -- Executing [5550100400@Sales DialPlan:1] NoOp("SIP/201-00000092", "Source external service, search number found")
+[Jul 16 12:54:07] VERBOSE[784277][C-0000004f] pbx_lua.c:     -- Executing [5550100400@Sales DialPlan:1] NoOp("SIP/201-00000092", "Set Connected num to "+15550100400" desttype "out"")
+[Jul 16 12:54:07] VERBOSE[784277][C-0000004f] pbx_lua.c:     -- Executing [5550100400@Sales DialPlan:1] NoOp("SIP/201-00000092", "Try save to_name: WIDGET INC MAIN")
+[Jul 16 12:54:07] VERBOSE[784277][C-0000004f] pbx_lua.c:     -- Executing [5550100400@Sales DialPlan:1] CELGenUserEvent("SIP/201-00000092", "LookUp,V0lER0VUIElOQyBNQUlO,,+15550100400,,out")
+[Jul 16 12:54:07] VERBOSE[784277][C-0000004f] pbx_lua.c:     -- Executing [5550100400@Sales DialPlan:1] NoOp("SIP/201-00000092", "Set Connected name to "WIDGET INC MAIN" desttype "out"")
+[Jul 16 12:54:07] VERBOSE[784277][C-0000004f] pbx_lua.c:     -- Executing [5550100400@Sales DialPlan:1] NoOp("SIP/201-00000092", "Number back normalization: +5550100100 --> 5550100100")
+[Jul 16 12:54:07] VERBOSE[784277][C-0000004f] pbx_lua.c:     -- Executing [5550100400@Sales DialPlan:1] NoOp("SIP/201-00000092", "Caller data set to 'Springfield City Hall' <5550100100>")
+[Jul 16 12:54:07] VERBOSE[784277][C-0000004f] pbx_lua.c:     -- Executing [5550100400@Sales DialPlan:1] NoOp("SIP/201-00000092", "Substitute name in From to Springfield City Hall")
+[Jul 16 12:54:07] VERBOSE[784277][C-0000004f] pbx_lua.c:     -- Executing [5550100400@Sales DialPlan:1] NoOp("SIP/201-00000092", "Substitute number in From to +5550100100")
+[Jul 16 12:54:07] VERBOSE[784277][C-0000004f] pbx_lua.c:     -- Executing [5550100400@Sales DialPlan:1] SipAddHeader("SIP/201-00000092", "X-Real-Caller: 201")
+[Jul 16 12:54:07] VERBOSE[784277][C-0000004f] pbx_lua.c:     -- Executing [5550100400@Sales DialPlan:1] SipAddHeader("SIP/201-00000092", "X-Real-Caller-License: essential")
+[Jul 16 12:54:07] VERBOSE[784277][C-0000004f] pbx_lua.c:     -- Executing [5550100400@Sales DialPlan:1] CELGenUserEvent("SIP/201-00000092", "TrunkCall,outgoing,classound")
+[Jul 16 12:54:07] VERBOSE[784277][C-0000004f] pbx_lua.c:     -- Executing [5550100400@Sales DialPlan:1] CELGenUserEvent("SIP/201-00000092", "App,Dial,SIP/classound/+15550100400,")
+[Jul 16 12:54:07] VERBOSE[784277][C-0000004f] pbx_lua.c:     -- Executing [5550100400@Sales DialPlan:1] Dial("SIP/201-00000092", "SIP/classound/+15550100400,,b(predial^extcall^1(+15550100400,WIDGET+INC+MAIN,,))")
+[Jul 16 12:54:07] VERBOSE[784277][C-0000004f] netsock2.c:   == Using SIP RTP CoS mark 5
+[Jul 16 12:54:07] NOTICE[784277][C-0000004f] chan_sip.c: trunk_calls_count incremented and now its value is: 1
+[Jul 16 12:54:07] VERBOSE[784277][C-0000004f] app_stack.c:     -- SIP/classound-00000093 Internal Gosub(predial,extcall,1(+15550100400,WIDGET+INC+MAIN,,)) start
+[Jul 16 12:54:07] NOTICE[784277][C-0000004f] app_stack.c: SIP/classound-00000093 Abnormal 'Gosub(predial,extcall,1(+15550100400,WIDGET+INC+MAIN,,))' exit.  Popping routine return locations.
+[Jul 16 12:54:07] VERBOSE[784277][C-0000004f] app_dial.c:     -- Called SIP/classound/+15550100400
+[Jul 16 12:54:13] NOTICE[4847][C-0000004f] chan_sip.c: In channels SIP/201-00000092 is disabled DirectRTP [flag 4]
+[Jul 16 12:54:13] VERBOSE[784277][C-0000004f] app_dial.c:     -- SIP/classound-00000093 is making progress passing it to SIP/201-00000092
+[Jul 16 12:54:13] NOTICE[784277][C-0000004f] chan_sip.c: Ignoring ${SIP_CODEC} variable because codec alaw is not shared by both ends.
+[Jul 16 12:54:16] NOTICE[4847][C-0000004f] chan_sip.c: In channels SIP/201-00000092 is disabled DirectRTP [flag 4]
+[Jul 16 12:54:16] NOTICE[4847][C-0000004f] chan_sip.c: In channels SIP/201-00000092 is disabled DirectRTP [flag 4]
+[Jul 16 12:54:16] VERBOSE[784277][C-0000004f] app_dial.c:     -- SIP/classound-00000093 answered SIP/201-00000092
+[Jul 16 12:54:16] NOTICE[784277][C-0000004f] chan_sip.c: Ignoring ${SIP_CODEC} variable because codec alaw is not shared by both ends.
+[Jul 16 12:54:17] NOTICE[4959] res_awstranscribe.c: Start transcribe for: 'SIP/201-00000092', auto detect language: 'false', turn on CA: 'false', vocabulary: 'Wildix_terms_en-US', language: 'en-US', transcription languages: '', source: 'recording'
+[Jul 16 12:54:17] NOTICE[4959] ./aws/res_aws.h: aws_transcribe.cpp:809:init_transcribe_thread sample rate of rtp stream is 8000
+[Jul 16 12:54:17] VERBOSE[784322] res_awstranscribe.c:   == Begin AwsTranscribe capturing for SIP/201-00000092 [0xffff4827c030]
+[Jul 16 12:54:17] NOTICE[784321] ./aws/res_aws.h: aws_transcribe.cpp:717:aws_transcribe_thread Try to start a transcribe_thread channels: 2 (Simple transcribing): starting cb 0xffff4474aec0, userdata: 0xffff44090bf0
+[Jul 16 12:54:17] WARNING[4959] res_awstranscribe.c: The transcribe service has been already started on the SIP/201-00000092
+[Jul 16 12:54:17] NOTICE[4959] res_awstranscribe.c: No way to start transcribe for SIP/201-00000092 (ALREADY_STARTED)
+[Jul 16 12:54:17] NOTICE[4959] res_awstranscribe.c: No way to start transcribe for Unknown chan ()
+[Jul 16 12:54:19] NOTICE[784321] ./aws/res_aws.h: aws_transcribe.cpp:733:aws_transcribe_thread We have stream for 0xaaaaedbc4000 (0xffff44090bf0) it took 0.000000sec
+[Jul 16 12:54:19] NOTICE[784321] ./aws/res_aws.h: aws_transcribe.cpp:427:operator() AwsStreamer:connect 0xaaaaedbc4000 connecting to aws speech.
+[Jul 16 12:54:19] NOTICE[784321] res_awstranscribe.c: Got event AwsTranscribe::START for SIP/201-00000092, FlowID: 0, TranscribeID:  (0xffff44090bf0)
+[Jul 16 12:54:19] NOTICE[784321] ./aws/res_aws.h: aws_transcribe.cpp:432:operator() AwsStreamer 0xaaaaedbc4000 got stream ready, 15 buffered frames
+[Jul 16 12:54:19] NOTICE[784321] ./aws/res_aws.h: aws_transcribe.cpp:133:process_data AwsStreamer: 0xaaaaedbc4000 process data (0xffff44090bf0)
+[Jul 16 12:54:21] NOTICE[784326] res_awstranscribe.c: chan_name: SIP/201-00000092, id: wildixbox-5550100200.230, role: 'caller', chan_id: 'ch_0', text: '[REDACTED]', trans_id: 'a03dd52c-0f54-433f-9036-5124c4cf98ec', flow_id: [0], transcribe_id: [], lang: 'en-US', source: 'recording', init_time: 5550100300, start: 2, end: 907, sentiment: '', is_final: true (0xffff44090bf0), confidence: 0.0829
+[Jul 16 12:54:22] NOTICE[784326] res_awstranscribe.c: chan_name: SIP/201-00000092, id: wildixbox-5550100200.230, role: 'callee', chan_id: 'ch_1', text: '[REDACTED]', trans_id: '80cd3e4f-3e55-4c18-8119-5550300d7fe', flow_id: [0], transcribe_id: [], lang: 'en-US', source: 'recording', init_time: 5550100300, start: 1016, end: 2027, sentiment: '', is_final: true (0xffff44090bf0), confidence: 0.8599
+[Jul 16 12:54:25] NOTICE[784326] res_awstranscribe.c: chan_name: SIP/201-00000092, id: wildixbox-5550100200.230, role: 'caller', chan_id: 'ch_0', text: '[REDACTED]', trans_id: '9d60f39d-04d0-48ae-8de0-b7b3bbb867c5', flow_id: [0], transcribe_id: [], lang: 'en-US', source: 'recording', init_time: 5550100300, start: 1897, end: 4747, sentiment: '', is_final: true (0xffff44090bf0), confidence: 0.9929
+[Jul 16 12:54:26] NOTICE[784326] res_awstranscribe.c: chan_name: SIP/201-00000092, id: wildixbox-5550100200.230, role: 'callee', chan_id: 'ch_1', text: '[REDACTED]', trans_id: '925cb8b1-7210-43f9-88d7-28813a0ca7da', flow_id: [0], transcribe_id: [], lang: 'en-US', source: 'recording', init_time: 5550100300, start: 5087, end: 6107, sentiment: '', is_final: true (0xffff44090bf0), confidence: 0.9967
+[Jul 16 12:54:27] VERBOSE[4817] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 12:54:32] NOTICE[784326] res_awstranscribe.c: chan_name: SIP/201-00000092, id: wildixbox-5550100200.230, role: 'caller', chan_id: 'ch_0', text: '[REDACTED]', trans_id: '261dd4a9-b6bd-4964-b6c9-4f453d571d43', flow_id: [0], transcribe_id: [], lang: 'en-US', source: 'recording', init_time: 5550100300, start: 4847, end: 11787, sentiment: '', is_final: true (0xffff44090bf0), confidence: 0.9941
+[Jul 16 12:54:35] NOTICE[4847][C-00000050] chan_sip.c: Number Normalization for peer 'classound': Before - +15874242502; After - +15874242502
+[Jul 16 12:54:35] VERBOSE[4847][C-00000050] netsock2.c:   == Using SIP RTP CoS mark 5
+[Jul 16 12:54:35] NOTICE[4847][C-00000050] chan_sip.c: trunk_calls_count incremented and now its value is: 2
+[Jul 16 12:54:35] VERBOSE[784373][C-00000050] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-00000094", "Set call class to 'national'(3)")
+[Jul 16 12:54:35] VERBOSE[784373][C-00000050] pbx_lua.c:     -- Executing [+5550100100@classound:1] CELGenUserEvent("SIP/classound-00000094", "TrunkCall,incoming,classound")
+[Jul 16 12:54:35] VERBOSE[784373][C-00000050] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-00000094", "Executing 'Lookup caller name': PBID - all, number - +15874242502")
+[Jul 16 12:54:37] VERBOSE[784373][C-00000050] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-00000094", "Source external service, search number found")
+[Jul 16 12:54:37] VERBOSE[784373][C-00000050] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-00000094", "Set Caller num to "+15874242502" desttype "inc"")
+[Jul 16 12:54:37] VERBOSE[784373][C-00000050] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-00000094", "Try save from_name: GLOBEX CORPORATION")
+[Jul 16 12:54:37] VERBOSE[784373][C-00000050] pbx_lua.c:     -- Executing [+5550100100@classound:1] CELGenUserEvent("SIP/classound-00000094", "LookUp,R0xPQkVYIENPUlBPUkFUSU9O,,+15874242502,,inc")
+[Jul 16 12:54:37] VERBOSE[784373][C-00000050] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-00000094", "Set Caller name to "GLOBEX CORPORATION" desttype "inc"")
+[Jul 16 12:54:37] VERBOSE[784373][C-00000050] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-00000094", "Executing 'Jump to': exten - IVR, context - IVR 801, priority - 1")
+[Jul 16 12:54:37] VERBOSE[784373][C-00000050] pbx_lua.c:     -- Executing [+5550100100@classound:1] Goto("SIP/classound-00000094", "IVR 801,IVR,1")
+[Jul 16 12:54:37] VERBOSE[784373][C-00000050] pbx.c:     -- Goto (IVR 801,IVR,1)
+[Jul 16 12:54:37] VERBOSE[784373][C-00000050] pbx_lua.c:     -- Executing [IVR@IVR 801:1] NoOp("SIP/classound-00000094", "Executing 'Playback': sound - "custom/DayTimeMainMenu", waitDigits - y, opts - ")
+[Jul 16 12:54:37] VERBOSE[784373][C-00000050] pbx_lua.c:     -- Executing [IVR@IVR 801:1] Background("SIP/classound-00000094", "custom/DayTimeMainMenu,")
+[Jul 16 12:54:37] VERBOSE[784373][C-00000050] file.c:     -- <SIP/classound-00000094> Playing 'custom/DayTimeMainMenu.alaw' (language 'en')
+[Jul 16 12:54:37] NOTICE[784326] res_awstranscribe.c: chan_name: SIP/201-00000092, id: wildixbox-5550100200.230, role: 'callee', chan_id: 'ch_1', text: '[REDACTED]', trans_id: '8528bc17-4d95-47d0-a91f-dcd6eabf7266', flow_id: [0], transcribe_id: [], lang: 'en-US', source: 'recording', init_time: 5550100300, start: 12767, end: 17467, sentiment: '', is_final: true (0xffff44090bf0), confidence: 0.9967
+[Jul 16 12:54:39] NOTICE[784326] res_awstranscribe.c: chan_name: SIP/201-00000092, id: wildixbox-5550100200.230, role: 'callee', chan_id: 'ch_1', text: '[REDACTED]', trans_id: 'f59b39e6-4128-41cd-bdf9-7838b2bf8cd6', flow_id: [0], transcribe_id: [], lang: 'en-US', source: 'recording', init_time: 5550100300, start: 17977, end: 19387, sentiment: '', is_final: true (0xffff44090bf0), confidence: 0.4138
+[Jul 16 12:54:42] NOTICE[784326] res_awstranscribe.c: chan_name: SIP/201-00000092, id: wildixbox-5550100200.230, role: 'caller', chan_id: 'ch_0', text: '[REDACTED]', trans_id: '75420f34-a519-4544-be1d-4c7422e3d5b1', flow_id: [0], transcribe_id: [], lang: 'en-US', source: 'recording', init_time: 5550100300, start: 17087, end: 22587, sentiment: '', is_final: true (0xffff44090bf0), confidence: 0.9638
+[Jul 16 12:54:43] NOTICE[784326] res_awstranscribe.c: chan_name: SIP/201-00000092, id: wildixbox-5550100200.230, role: 'callee', chan_id: 'ch_1', text: '[REDACTED]', trans_id: '7a25188a-fa02-48d0-b609-c8f514e679e4', flow_id: [0], transcribe_id: [], lang: 'en-US', source: 'recording', init_time: 5550100300, start: 21817, end: 22987, sentiment: '', is_final: true (0xffff44090bf0), confidence: 0.6325
+[Jul 16 12:54:45] NOTICE[784326] res_awstranscribe.c: chan_name: SIP/201-00000092, id: wildixbox-5550100200.230, role: 'caller', chan_id: 'ch_0', text: '[REDACTED]', trans_id: '45b1cec0-20c5-43a8-bfd3-348773a793c3', flow_id: [0], transcribe_id: [], lang: 'en-US', source: 'recording', init_time: 5550100300, start: 23087, end: 25237, sentiment: '', is_final: true (0xffff44090bf0), confidence: 0.9992
+[Jul 16 12:54:50] VERBOSE[784373][C-00000050] pbx.c:   == Spawn extension (IVR 801, IVR, 1) exited non-zero on 'SIP/classound-00000094'
+[Jul 16 12:54:50] NOTICE[784373][C-00000050] chan_sip.c: trunk_calls_count decremented and now its value is 1
+[Jul 16 12:54:54] NOTICE[784326] res_awstranscribe.c: chan_name: SIP/201-00000092, id: wildixbox-5550100200.230, role: 'caller', chan_id: 'ch_0', text: '[REDACTED]', trans_id: '147811da-e216-4d31-93f2-095cf1179f49', flow_id: [0], transcribe_id: [], lang: 'en-US', source: 'recording', init_time: 5550100300, start: 25737, end: 34027, sentiment: '', is_final: true (0xffff44090bf0), confidence: 0.9430
+[Jul 16 12:54:57] NOTICE[784326] res_awstranscribe.c: chan_name: SIP/201-00000092, id: wildixbox-5550100200.230, role: 'callee', chan_id: 'ch_1', text: '[REDACTED]', trans_id: '786d5a94-c1fb-42fd-9db6-dcf5cbc3f48d', flow_id: [0], transcribe_id: [], lang: 'en-US', source: 'recording', init_time: 5550100300, start: 34687, end: 36507, sentiment: '', is_final: true (0xffff44090bf0), confidence: 0.9839
+[Jul 16 12:54:58] NOTICE[784326] res_awstranscribe.c: chan_name: SIP/201-00000092, id: wildixbox-5550100200.230, role: 'caller', chan_id: 'ch_0', text: '[REDACTED]', trans_id: 'e4c690b7-c125-453d-85b9-8b887eb406c7', flow_id: [0], transcribe_id: [], lang: 'en-US', source: 'recording', init_time: 5550100300, start: 36207, end: 38267, sentiment: '', is_final: true (0xffff44090bf0), confidence: 0.9987
+[Jul 16 12:54:59] VERBOSE[784277][C-0000004f] app_stack.c:     -- SIP/201-00000092 Internal Gosub(hdlr,service,1) start
+[Jul 16 12:54:59] NOTICE[784277][C-0000004f] app_stack.c: SIP/201-00000092 Abnormal 'Gosub(hdlr,service,1)' exit.  Popping routine return locations.
+[Jul 16 12:54:59] NOTICE[784277][C-0000004f] chan_sip.c: trunk_calls_count decremented and now its value is 0
+[Jul 16 12:54:59] VERBOSE[784277][C-0000004f] pbx.c:   == Spawn extension (Sales DialPlan, 5550100400, 1) exited non-zero on 'SIP/201-00000092'
+[Jul 16 12:54:59] NOTICE[784322] res_awstranscribe.c: audiohook was stopped [0], let's stop transcribe
+[Jul 16 12:54:59] NOTICE[784322] res_awstranscribe.c: We have user_data, try to stop it [0xffff44090bf0]
+[Jul 16 12:54:59] NOTICE[784322] ./aws/res_aws.h: aws_transcribe.cpp:857:aws_transcribe_session_stop Try to stop transcribe [0xffff44090bf0]
+[Jul 16 12:54:59] NOTICE[784322] ./aws/res_aws.h: aws_transcribe.cpp:869:aws_transcribe_session_stop aws_transcribe_session_stop: finish. [0xffff44090bf0]
+[Jul 16 12:54:59] NOTICE[784322] ./aws/res_aws.h: aws_transcribe.cpp:283:finish AwsStreamer::finish 0xaaaaedbc4000 (0xffff44090bf0)
+[Jul 16 12:54:59] NOTICE[784322] ./aws/res_aws.h: aws_transcribe.cpp:881:aws_transcribe_session_stop aws_transcribe_session_stop: signaling thread to stop (0xffff44090bf0)
+[Jul 16 12:54:59] NOTICE[784321] ./aws/res_aws.h: aws_transcribe.cpp:183:process_data No stream, nothing to close [0xffff44090bf0]
+[Jul 16 12:54:59] NOTICE[784326] ./aws/res_aws.h: aws_transcribe.cpp:449:operator() AwsStreamer 0xaaaaedbc4000 stream got final response userdata: 0xffff44090bf0
+[Jul 16 12:54:59] NOTICE[784326] ./aws/res_aws.h: aws_transcribe.cpp:456:operator() OnResponseCallback: ignoring error during intentional shutdown: 'curlCode: 42, Operation was aborted by an application callback' [0xffff44090bf0]
+[Jul 16 12:54:59] NOTICE[784326] res_awstranscribe.c: Got event AwsTranscribe::FINISHED for SIP/201-00000092, FlowID: 0, TranscribeID:  (0xffff44090bf0)
+[Jul 16 12:54:59] NOTICE[784326] res_awstranscribe.c: Got event AwsTranscribe::STOP for SIP/201-00000092, FlowID: 0, TranscribeID:  (0xffff44090bf0)
+[Jul 16 12:54:59] NOTICE[784321] ./aws/res_aws.h: aws_transcribe.cpp:754:aws_transcribe_thread transcribe_thread: stopped cb 0xffff4474aec0 (0xffff44090bf0)
+[Jul 16 12:54:59] NOTICE[784322] ./aws/res_aws.h: aws_transcribe.cpp:923:aws_transcribe_session_stop aws_transcribe_session_stop: thread joined (0xffff44090bf0). Total time: 0.200sec
+[Jul 16 12:54:59] NOTICE[784322] ./aws/res_aws.h: aws_transcribe.cpp:117:~AwsStreamer AwsStreamer::~AwsStreamer wrote 211 packets, error packets: 0 0xaaaaedbc4000
+[Jul 16 12:54:59] VERBOSE[784322] res_awstranscribe.c:   == End AwsTranscribe capturing [0xffff4827c030]
+[Jul 16 12:55:00] VERBOSE[784436] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 12:55:14] VERBOSE[784823] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 12:56:26] VERBOSE[785233] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 12:56:34] VERBOSE[785343] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 12:56:34] VERBOSE[785363] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 12:56:35] VERBOSE[785399] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 12:56:41] VERBOSE[785433] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 12:56:42] VERBOSE[785456] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 12:57:03] VERBOSE[785706] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 12:57:04] VERBOSE[785728] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 12:57:06] VERBOSE[785765] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 12:57:06] VERBOSE[785798] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 12:57:06] VERBOSE[785838] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 12:57:27] VERBOSE[4817] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 12:57:53] VERBOSE[785961] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 13:00:27] VERBOSE[4817] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 13:01:54] VERBOSE[4847][C-00000051] netsock2.c:   == Using SIP VIDEO CoS mark 6
+[Jul 16 13:01:54] VERBOSE[4847][C-00000051] netsock2.c:   == Using SIP RTP CoS mark 5
+[Jul 16 13:01:54] VERBOSE[787432][C-00000051] pbx_lua.c:     -- Executing [5550100500@Rec Center DialPlan:1] NoOp("SIP/129-00000095", "Executing 'Jump to': exten - IVR, context - IVR 801, priority - 1")
+[Jul 16 13:01:54] VERBOSE[787432][C-00000051] pbx_lua.c:     -- Executing [5550100500@Rec Center DialPlan:1] Goto("SIP/129-00000095", "IVR 801,IVR,1")
+[Jul 16 13:01:54] VERBOSE[787432][C-00000051] pbx.c:     -- Goto (IVR 801,IVR,1)
+[Jul 16 13:01:54] VERBOSE[787432][C-00000051] pbx_lua.c:     -- Executing [IVR@IVR 801:1] NoOp("SIP/129-00000095", "Executing 'Playback': sound - "custom/DayTimeMainMenu", waitDigits - y, opts - ")
+[Jul 16 13:01:54] VERBOSE[787432][C-00000051] pbx_lua.c:     -- Executing [IVR@IVR 801:1] Background("SIP/129-00000095", "custom/DayTimeMainMenu,")
+[Jul 16 13:01:55] VERBOSE[787432][C-00000051] file.c:     -- <SIP/129-00000095> Playing 'custom/DayTimeMainMenu.opus' (language 'en-us')
+[Jul 16 13:02:30] VERBOSE[787432][C-00000051] pbx_lua.c:     -- Executing [IVR@IVR 801:1] WaitExten("SIP/129-00000095", "10")
+[Jul 16 13:02:30] DTMF[787432][C-00000051] channel.c: DTMF end '0' received on SIP/129-00000095, duration 160 ms
+[Jul 16 13:02:30] DTMF[787432][C-00000051] channel.c: DTMF begin emulation of '0' with duration 160 queued on SIP/129-00000095
+[Jul 16 13:02:31] DTMF[787432][C-00000051] channel.c: DTMF end emulation of '0' queued on SIP/129-00000095
+[Jul 16 13:02:36] VERBOSE[787432][C-00000051] pbx.c:   == CDR updated on SIP/129-00000095
+[Jul 16 13:02:36] VERBOSE[787432][C-00000051] pbx_lua.c:     -- Executing [0@IVR 801:1] NoOp("SIP/129-00000095", "Executing 'Call group': group id - 1, announceoverride - , timeout - 20, mohclass - ")
+[Jul 16 13:02:36] VERBOSE[787432][C-00000051] pbx_lua.c:     -- Executing [0@IVR 801:1] CELGenUserEvent("SIP/129-00000095", "CallGroup,701_FrontDesk,1,202")
+[Jul 16 13:02:36] VERBOSE[787432][C-00000051] pbx_lua.c:     -- Executing [0@IVR 801:1] CELGenUserEvent("SIP/129-00000095", "Service,701_FrontDesk,1")
+[Jul 16 13:02:36] VERBOSE[787432][C-00000051] pbx_lua.c:     -- Executing [0@IVR 801:1] Queue("SIP/129-00000095", "1,tCrE,,,20,,,,,,")
+[Jul 16 13:02:36] VERBOSE[787432][C-00000051] app_queue.c:     -- Called Local/202@internalcalls
+[Jul 16 13:02:36] NOTICE[787701][C-00000051] chan_sip.c: This function can only be used on SIP channels.
+[Jul 16 13:02:36] NOTICE[787701][C-00000051] chan_sip.c: This function can only be used on SIP channels.
+[Jul 16 13:02:36] VERBOSE[787701][C-00000051] pbx_lua.c:     -- Executing [202@internalcalls:1] NoOp("Local/202@internalcalls-0000002a;2", "Dialing from 129 to number 202 ")
+[Jul 16 13:02:36] VERBOSE[787701][C-00000051] pbx_lua.c:     -- Executing [202@internalcalls:1] NoOp("Local/202@internalcalls-0000002a;2", "Set call class to 'internal'(1)")
+[Jul 16 13:02:36] VERBOSE[787701][C-00000051] pbx_lua.c:     -- Executing [202@internalcalls:1] NoOp("Local/202@internalcalls-0000002a;2", "Calltype 'internal'")
+[Jul 16 13:02:36] VERBOSE[787701][C-00000051] pbx_lua.c:     -- Executing [202@internalcalls:1] NoOp("Local/202@internalcalls-0000002a;2", "Dst features for active calltype/status - internal/default:
+�    -- 	 MEXT:0 BCF:1(VOICEMAIL) UCF:1(VOICEMAIL) SMSMCN:0 REJECT:0 EMAILMCN:0 FCF:0 TOUT:1(20) CW:1 MOBCONFIRMATION:0 RING:1(Ring1) ROAD:0")
+[Jul 16 13:02:36] NOTICE[787701][C-00000051] chan_sip.c: This function can only be used on SIP channels.
+[Jul 16 13:02:36] NOTICE[787701][C-00000051] chan_sip.c: This function can only be used on SIP channels.
+[Jul 16 13:02:36] VERBOSE[787701][C-00000051] pbx_lua.c:     -- Executing [202@internalcalls:1] NoOp("Local/202@internalcalls-0000002a;2", "Device state for 'SIP/202' is NOT_INUSE")
+[Jul 16 13:02:36] VERBOSE[787701][C-00000051] pbx_lua.c:     -- Executing [202@internalcalls:1] CELGenUserEvent("Local/202@internalcalls-0000002a;2", "App,Dial,SIP/202,")
+[Jul 16 13:02:36] VERBOSE[787701][C-00000051] pbx_lua.c:     -- Executing [202@internalcalls:1] Dial("Local/202@internalcalls-0000002a;2", "SIP/202,20,zb(predial^internalcall^1(,<http://127.0.0.1/Ring1.wav;info=internal>,6,,,5550200,false))")
+[Jul 16 13:02:36] VERBOSE[787701][C-00000051] netsock2.c:   == Using SIP VIDEO CoS mark 6
+[Jul 16 13:02:36] VERBOSE[787701][C-00000051] netsock2.c:   == Using SIP RTP CoS mark 5
+[Jul 16 13:02:36] VERBOSE[787701][C-00000051] app_stack.c:     -- SIP/202-00000096 Internal Gosub(predial,internalcall,1(,<http://127.0.0.1/Ring1.wav;info=internal>,6,,,5550200,false)) start
+[Jul 16 13:02:36] NOTICE[787701][C-00000051] app_stack.c: SIP/202-00000096 Abnormal 'Gosub(predial,internalcall,1(,<http://127.0.0.1/Ring1.wav;info=internal>,6,,,5550200,false))' exit.  Popping routine return locations.
+[Jul 16 13:02:36] VERBOSE[787701][C-00000051] app_dial.c:     -- Called SIP/202
+[Jul 16 13:02:36] VERBOSE[787432][C-00000051] app_queue.c:     -- Local/202@internalcalls-0000002a;1 connected line has changed. Saving it until answer for SIP/129-00000095
+[Jul 16 13:02:36] VERBOSE[787701][C-00000051] app_dial.c:     -- SIP/202-00000096 is ringing
+[Jul 16 13:02:36] VERBOSE[787432][C-00000051] app_queue.c:     -- Local/202@internalcalls-0000002a;1 is ringing
+[Jul 16 13:02:56] VERBOSE[787432][C-00000051] app_queue.c:     -- Nobody picked up in 20000 ms
+[Jul 16 13:02:56] VERBOSE[787701][C-00000051] pbx.c:   == Spawn extension (internalcalls, 202, 1) exited non-zero on 'Local/202@internalcalls-0000002a;2'
+[Jul 16 13:02:56] VERBOSE[787432][C-00000051] pbx_lua.c:     -- Executing [0@IVR 801:1] NoOp("SIP/129-00000095", "Executing 'Playback': sound - "custom/Front_Desk_Voicemail", waitDigits - n, opts - ")
+[Jul 16 13:02:56] VERBOSE[787432][C-00000051] pbx_lua.c:     -- Executing [0@IVR 801:1] Playback("SIP/129-00000095", "custom/Front_Desk_Voicemail,")
+[Jul 16 13:02:56] VERBOSE[787432][C-00000051] file.c:     -- <SIP/129-00000095> Playing 'custom/Front_Desk_Voicemail.opus' (language 'en-us')
+[Jul 16 13:03:03] VERBOSE[787432][C-00000051] pbx.c:   == Spawn extension (IVR 801, 0, 1) exited non-zero on 'SIP/129-00000095'
+[Jul 16 13:03:03] VERBOSE[787432][C-00000051] app_stack.c:     -- SIP/129-00000095 Internal Gosub(hdlr,service,1) start
+[Jul 16 13:03:03] VERBOSE[787432][C-00000051] pbx_lua.c:     -- Executing [service@hdlr:1] NoOp("SIP/129-00000095", "Notification for mwi manager was not sent")
+[Jul 16 13:03:03] NOTICE[787432][C-00000051] app_stack.c: SIP/129-00000095 Abnormal 'Gosub(hdlr,service,1)' exit.  Popping routine return locations.
+[Jul 16 13:03:03] WARNING[4847] chan_sip.c: Got response from peer 129 to incoming request PUBLISH: '412 Conditional request failed'; From: "129" <sip:129@127.0.0.1:6050>;tag=as4f7f6d3e; To: <sip:129@127.0.0.1>;tag=a6a1c5f60faecf035a1ae5b6e96e979a-37e58be4; callid - 'publish.dlg.dialog.129'. Reason cause: 16 (Normal Clearing)
+[Jul 16 13:03:27] VERBOSE[4817] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 13:04:43] VERBOSE[788384] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 13:04:43] VERBOSE[788390] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 13:04:44] VERBOSE[788422] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 13:04:44] VERBOSE[788439] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 13:04:44] VERBOSE[788491] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 13:04:54] VERBOSE[788537] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 13:04:59] VERBOSE[788558] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 13:04:59] VERBOSE[788593] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 13:05:06] NOTICE[4847][C-00000052] chan_sip.c: Number Normalization for peer 'classound': Before - +17804995786; After - +17804995786
+[Jul 16 13:05:06] VERBOSE[4847][C-00000052] netsock2.c:   == Using SIP RTP CoS mark 5
+[Jul 16 13:05:06] NOTICE[4847][C-00000052] chan_sip.c: trunk_calls_count incremented and now its value is: 1
+[Jul 16 13:05:06] VERBOSE[788916][C-00000052] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-00000097", "Set call class to 'mobile'(4)")
+[Jul 16 13:05:06] VERBOSE[788916][C-00000052] pbx_lua.c:     -- Executing [+5550100100@classound:1] CELGenUserEvent("SIP/classound-00000097", "TrunkCall,incoming,classound")
+[Jul 16 13:05:06] VERBOSE[788916][C-00000052] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-00000097", "Executing 'Lookup caller name': PBID - all, number - +17804995786")
+[Jul 16 13:05:08] VERBOSE[788939] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 13:05:08] VERBOSE[788916][C-00000052] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-00000097", "Source external service, search number found")
+[Jul 16 13:05:08] VERBOSE[788916][C-00000052] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-00000097", "Set Caller num to "+17804995786" desttype "inc"")
+[Jul 16 13:05:08] VERBOSE[788916][C-00000052] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-00000097", "Try save from_name: ACME CORP HQ")
+[Jul 16 13:05:08] VERBOSE[788916][C-00000052] pbx_lua.c:     -- Executing [+5550100100@classound:1] CELGenUserEvent("SIP/classound-00000097", "LookUp,QUNNRSBDT1JQIEhR,,+17804995786,,inc")
+[Jul 16 13:05:08] VERBOSE[788916][C-00000052] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-00000097", "Set Caller name to "ACME CORP HQ" desttype "inc"")
+[Jul 16 13:05:08] VERBOSE[788916][C-00000052] pbx_lua.c:     -- Executing [+5550100100@classound:1] NoOp("SIP/classound-00000097", "Executing 'Jump to': exten - IVR, context - IVR 801, priority - 1")
+[Jul 16 13:05:08] VERBOSE[788916][C-00000052] pbx_lua.c:     -- Executing [+5550100100@classound:1] Goto("SIP/classound-00000097", "IVR 801,IVR,1")
+[Jul 16 13:05:08] VERBOSE[788916][C-00000052] pbx.c:     -- Goto (IVR 801,IVR,1)
+[Jul 16 13:05:08] VERBOSE[788916][C-00000052] pbx_lua.c:     -- Executing [IVR@IVR 801:1] NoOp("SIP/classound-00000097", "Executing 'Playback': sound - "custom/DayTimeMainMenu", waitDigits - y, opts - ")
+[Jul 16 13:05:08] VERBOSE[788916][C-00000052] pbx_lua.c:     -- Executing [IVR@IVR 801:1] Background("SIP/classound-00000097", "custom/DayTimeMainMenu,")
+[Jul 16 13:05:09] VERBOSE[788916][C-00000052] file.c:     -- <SIP/classound-00000097> Playing 'custom/DayTimeMainMenu.alaw' (language 'en')
+[Jul 16 13:05:11] VERBOSE[788970] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 13:05:11] VERBOSE[788974] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 13:05:15] DTMF[788916][C-00000052] channel.c: DTMF begin '0' received on SIP/classound-00000097
+[Jul 16 13:05:15] DTMF[788916][C-00000052] channel.c: DTMF begin ignored '0' on SIP/classound-00000097
+[Jul 16 13:05:15] DTMF[788916][C-00000052] channel.c: DTMF end '0' received on SIP/classound-00000097, duration 70 ms
+[Jul 16 13:05:15] DTMF[788916][C-00000052] channel.c: DTMF end passthrough '0' on SIP/classound-00000097
+[Jul 16 13:05:20] VERBOSE[788916][C-00000052] pbx.c:   == CDR updated on SIP/classound-00000097
+[Jul 16 13:05:20] VERBOSE[788916][C-00000052] pbx_lua.c:     -- Executing [0@IVR 801:1] NoOp("SIP/classound-00000097", "Executing 'Call group': group id - 1, announceoverride - , timeout - 20, mohclass - ")
+[Jul 16 13:05:20] VERBOSE[788916][C-00000052] pbx_lua.c:     -- Executing [0@IVR 801:1] CELGenUserEvent("SIP/classound-00000097", "CallGroup,701_FrontDesk,1,202")
+[Jul 16 13:05:20] VERBOSE[788916][C-00000052] pbx_lua.c:     -- Executing [0@IVR 801:1] CELGenUserEvent("SIP/classound-00000097", "Service,701_FrontDesk,1")
+[Jul 16 13:05:20] VERBOSE[788916][C-00000052] pbx_lua.c:     -- Executing [0@IVR 801:1] Queue("SIP/classound-00000097", "1,tCrE,,,20,,,,,,")
+[Jul 16 13:05:20] VERBOSE[788916][C-00000052] app_queue.c:     -- Called Local/202@internalcalls
+[Jul 16 13:05:20] NOTICE[789017][C-00000052] chan_sip.c: This function can only be used on SIP channels.
+[Jul 16 13:05:20] NOTICE[789017][C-00000052] chan_sip.c: This function can only be used on SIP channels.
+[Jul 16 13:05:20] VERBOSE[789017][C-00000052] pbx_lua.c:     -- Executing [202@internalcalls:1] NoOp("Local/202@internalcalls-0000002b;2", "Dialing from classound/+17804995786 to number 202")
+[Jul 16 13:05:20] VERBOSE[789017][C-00000052] pbx_lua.c:     -- Executing [202@internalcalls:1] NoOp("Local/202@internalcalls-0000002b;2", "Calltype 'external'")
+[Jul 16 13:05:20] VERBOSE[789017][C-00000052] pbx_lua.c:     -- Executing [202@internalcalls:1] NoOp("Local/202@internalcalls-0000002b;2", "Dst features for active calltype/status - internal/default:
+�    -- 	 MEXT:0 BCF:1(VOICEMAIL) UCF:1(VOICEMAIL) SMSMCN:0 REJECT:0 EMAILMCN:0 FCF:0 TOUT:1(20) CW:1 MOBCONFIRMATION:0 RING:1(Ring1) ROAD:0")
+[Jul 16 13:05:20] NOTICE[789017][C-00000052] chan_sip.c: This function can only be used on SIP channels.
+[Jul 16 13:05:20] NOTICE[789017][C-00000052] chan_sip.c: This function can only be used on SIP channels.
+[Jul 16 13:05:20] VERBOSE[789017][C-00000052] pbx_lua.c:     -- Executing [202@internalcalls:1] NoOp("Local/202@internalcalls-0000002b;2", "Device state for 'SIP/202' is NOT_INUSE")
+[Jul 16 13:05:20] VERBOSE[789017][C-00000052] pbx_lua.c:     -- Executing [202@internalcalls:1] CELGenUserEvent("Local/202@internalcalls-0000002b;2", "App,Dial,SIP/202,")
+[Jul 16 13:05:20] VERBOSE[789017][C-00000052] pbx_lua.c:     -- Executing [202@internalcalls:1] Dial("Local/202@internalcalls-0000002b;2", "SIP/202,20,zb(predial^internalcall^1(,<http://127.0.0.1/Ring1.wav;info=external>,6,classound,,5550200,false))")
+[Jul 16 13:05:20] VERBOSE[789017][C-00000052] netsock2.c:   == Using SIP VIDEO CoS mark 6
+[Jul 16 13:05:20] VERBOSE[789017][C-00000052] netsock2.c:   == Using SIP RTP CoS mark 5
+[Jul 16 13:05:21] VERBOSE[789017][C-00000052] app_stack.c:     -- SIP/202-00000098 Internal Gosub(predial,internalcall,1(,<http://127.0.0.1/Ring1.wav;info=external>,6,classound,,5550200,false)) start
+[Jul 16 13:05:21] NOTICE[789017][C-00000052] app_stack.c: SIP/202-00000098 Abnormal 'Gosub(predial,internalcall,1(,<http://127.0.0.1/Ring1.wav;info=external>,6,classound,,5550200,false))' exit.  Popping routine return locations.
+[Jul 16 13:05:21] VERBOSE[789017][C-00000052] app_dial.c:     -- Called SIP/202
+[Jul 16 13:05:21] VERBOSE[788916][C-00000052] app_queue.c:     -- Local/202@internalcalls-0000002b;1 connected line has changed. Saving it until answer for SIP/classound-00000097
+[Jul 16 13:05:21] VERBOSE[789017][C-00000052] app_dial.c:     -- SIP/202-00000098 is ringing
+[Jul 16 13:05:21] VERBOSE[788916][C-00000052] app_queue.c:     -- Local/202@internalcalls-0000002b;1 is ringing
+[Jul 16 13:05:32] VERBOSE[789054] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 13:05:35] WARNING[789017][C-00000052] chan_sip.c: Send request CANCEL to peer 202; From: "ACME CORP HQ" <sip:+17804995786@127.0.0.1:6050>;tag=as7e320321; To: <sip:202@127.0.0.1>; callid - '36bbd7b5550100600c896b4c3427d97a'. Reason cause: 16 (Normal Clearing)
+[Jul 16 13:05:35] VERBOSE[789017][C-00000052] pbx.c:   == Spawn extension (internalcalls, 202, 1) exited non-zero on 'Local/202@internalcalls-0000002b;2'
+[Jul 16 13:05:35] VERBOSE[788916][C-00000052] pbx.c:   == Spawn extension (IVR 801, 0, 1) exited non-zero on 'SIP/classound-00000097'
+[Jul 16 13:05:35] VERBOSE[788916][C-00000052] app_stack.c:     -- SIP/classound-00000097 Internal Gosub(hdlr,service,1) start
+[Jul 16 13:05:35] VERBOSE[788916][C-00000052] pbx_lua.c:     -- Executing [service@hdlr:1] NoOp("SIP/classound-00000097", "Notification for mwi manager was not sent")
+[Jul 16 13:05:36] NOTICE[788916][C-00000052] app_stack.c: SIP/classound-00000097 Abnormal 'Gosub(hdlr,service,1)' exit.  Popping routine return locations.
+[Jul 16 13:05:36] NOTICE[788916][C-00000052] chan_sip.c: trunk_calls_count decremented and now its value is 0
+[Jul 16 13:05:41] VERBOSE[789125] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
+[Jul 16 13:06:27] VERBOSE[4817] config.c:   == Parsing '/etc/callweaver/res_ldap.conf': Found
