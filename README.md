@@ -89,7 +89,7 @@ python cw_viewer.py <logfile> [options]
 | Flag | Description |
 |---|---|
 | `--show-noise` | Include `config.c` and `res_awstranscribe.c` lines (excluded by default) |
-| `--year YYYY` | Calendar year for timestamp parsing (default: 2026) |
+| `--year YYYY` | Calendar year for timestamp parsing (default: current year) |
 | `--host ADDR` | Web server listen address (default: `127.0.0.1`) |
 | `--port PORT` | Web server listen port (default: `8080`) |
 
@@ -102,8 +102,8 @@ Callweaver / WMS log timestamps look like this:
 ```
 
 They include **month, day, and time** but **no year**. Python's `datetime`
-requires a year to parse a complete timestamp, so the parser defaults to
-**2026**. That works fine for time-of-day filtering (`--from` / `--to`) — the
+requires a year to parse a complete timestamp, so the parser defaults to the
+**current calendar year**. That works fine for time-of-day filtering (`--from` / `--to`) — the
 year doesn't affect comparisons when all entries share the same year.
 
 Use `--year` when your log spans a year boundary (e.g. December→January) or

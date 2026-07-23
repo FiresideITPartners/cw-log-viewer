@@ -40,8 +40,8 @@ class LogParser:
     parsing methods.
     """
 
-    def __init__(self, year: int = 2026):
-        self.year = year
+    def __init__(self, year: int | None = None):
+        self.year = year if year is not None else datetime.now().year
 
     def parse_line(self, line_number: int, line: str) -> LogEntry:
         """Parse a single log line. Returns LogEntry with available fields filled."""

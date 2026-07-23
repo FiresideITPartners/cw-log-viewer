@@ -324,10 +324,10 @@ def test_filter_noise_exclusion():
     assert all(e.process not in ('config.c', 'res_awstranscribe.c') for e in cleaned)
 
 
-def test_default_year_2026():
-    """Default year should be 2026."""
+def test_default_year_is_current():
+    """Default year should be the current calendar year."""
     parser = LogParser()
-    assert parser.year == 2026
+    assert parser.year == datetime.now().year
 
     parser2 = LogParser(year=2025)
     assert parser2.year == 2025

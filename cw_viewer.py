@@ -8,15 +8,16 @@ from datetime import datetime
 def parse_time(time_str: str) -> datetime:
     """Parse a time string like '12:38' or '12:38:00' into a datetime.
 
-    Uses a fixed reference date (2026-07-16) since log timestamps are
-    month-day-hour:minute:second without a year.  The actual date is
-    irrelevant for time-of-day comparisons; only the time component
-    matters for filtering.
+    Uses January 1 of the current calendar year for the date portion
+    since log timestamps carry month-day-hour:minute:second without a
+    year.  The actual date is irrelevant for time-of-day comparisons;
+    only the time component matters for filtering.
     """
     for fmt in ('%H:%M', '%H:%M:%S'):
         try:
             t = datetime.strptime(time_str, fmt)
-            return datetime(2026, 7, 16, t.hour, t.minute, t.second)
+            now = datetime.now()
+            return datetime(now.year, 1, 1, t.hour, t.minute, t.second)
         except ValueError:
             continue
     raise argparse.ArgumentTypeError(
@@ -125,10 +126,10 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         '--year',
         type=int,
-        default=2026,
+        default=datetime.now().year,
         metavar='YYYY',
         help='Calendar year used when interpreting month-day timestamps '
-             '(default: %(default)s).',
+             '(default: current year).',
     )
 
     # ── web server options ──────────────────────────────────────────
@@ -147,6 +148,33 @@ def build_parser() -> argparse.ArgumentParser:
     )
 
     return parser
+
+
+def _rebase_time_filters(args, entries: list) -> None:
+    """Adjust time_from/time_to to use the log data's actual month/day.
+
+    ``parse_time()`` uses a placeholder January 1 for the date, but
+    log entries carry real month-day values.  Without this adjustment,
+    time-of-day comparisons fail because the dates don't match.
+    """
+    if args.time_from is None and args.time_to is None:
+        return
+
+    # Find the first entry with a valid timestamp to extract month/day.
+    ref_month, ref_day = 1, 1
+    for e in entries:
+        if e.timestamp and e.timestamp != datetime.min:
+            ref_month, ref_day = e.timestamp.month, e.timestamp.day
+            break
+
+    def _rebase(dt: datetime) -> datetime:
+        return datetime(dt.year, ref_month, ref_day,
+                        dt.hour, dt.minute, dt.second)
+
+    if args.time_from is not None:
+        args.time_from = _rebase(args.time_from)
+    if args.time_to is not None:
+        args.time_to = _rebase(args.time_to)
 
 
 def main(argv: list[str] | None = None) -> None:
@@ -173,6 +201,11 @@ def main(argv: list[str] | None = None) -> None:
     log_parser = LogParser(year=args.year)
     entries = log_parser.parse_file(args.logfile)
     cf = CallFlow(entries)
+
+    # Rebase time-filter datetimes onto the log data's month/day.
+    # parse_time() uses January 1 as a placeholder date; we need to
+    # match the entries' actual month/day so comparisons work.
+    _rebase_time_filters(args, entries)
 
     if args.list_calls:
         format_list_calls(cf)

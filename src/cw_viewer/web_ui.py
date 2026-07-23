@@ -378,16 +378,17 @@ class CallFlowHandler(BaseHTTPRequestHandler):
 
             start = None
             end = None
+            now = datetime.now()
             if start_str:
                 try:
                     h, m = map(int, start_str.split(':'))
-                    start = datetime(2026, 7, 16, h, m, 0)
+                    start = datetime(now.year, 1, 1, h, m, 0)
                 except (ValueError, TypeError):
                     pass
             if end_str:
                 try:
                     h, m = map(int, end_str.split(':'))
-                    end = datetime(2026, 7, 16, h, m, 0)
+                    end = datetime(now.year, 1, 1, h, m, 0)
                 except (ValueError, TypeError):
                     pass
 
