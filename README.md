@@ -128,6 +128,8 @@ python cw_viewer.py cwtrunc.txt --serve --host 0.0.0.0 --port 9090
 
 ![Web UI detail view placeholder](docs/web-ui-detail.png)
 
+Click any event in the timeline to expand its raw log line (prefixed with `L<number>` — the line number in the source log file).
+
 ### API Endpoints
 
 | Endpoint | Description |

@@ -190,7 +190,7 @@ async function selectCall(callId) {
     var emojiPart = spaceIdx > 0 ? e.label.slice(0, spaceIdx) : e.label;
     var textPart = spaceIdx > 0 ? e.label.slice(spaceIdx + 1) : '';
     html += '<div class="tl-label"><span class="tl-emoji">' + emojiPart + '</span>' + textPart + '</div>';
-    html += '<div class="tl-raw" style="display:none">' + (e.process || '') + ': ' + escHtml(e.raw || '') + '</div>';
+    html += '<div class="tl-raw" style="display:none">L' + e.line + ': ' + escHtml(e.raw || '') + '</div>';
     html += '</div>';
   }
   document.getElementById('timeline').innerHTML = html;
@@ -364,6 +364,7 @@ class CallFlowHandler(BaseHTTPRequestHandler):
                     'label': label,
                     'raw': (e.message or '')[:300],
                     'process': e.process or '',
+                    'line': e.line_number,
                 })
             self._send_json(detail)
             return
