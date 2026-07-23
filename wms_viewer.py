@@ -107,6 +107,11 @@ def build_parser() -> argparse.ArgumentParser:
         action='store_true',
         help='Print a table of all Call-IDs with their start/end times.',
     )
+    output_group.add_argument(
+        '--serve', '-w',
+        action='store_true',
+        help='Start a web server with a browseable UI (default port: 8080).',
+    )
 
     # ── noise control ──────────────────────────────────────────────
     parser.add_argument(
@@ -124,6 +129,21 @@ def build_parser() -> argparse.ArgumentParser:
         metavar='YYYY',
         help='Calendar year used when interpreting month-day timestamps '
              '(default: %(default)s).',
+    )
+
+    # ── web server options ──────────────────────────────────────────
+    parser.add_argument(
+        '--host',
+        default='127.0.0.1',
+        metavar='ADDR',
+        help='Host address for the web server (default: %(default)s).',
+    )
+    parser.add_argument(
+        '--port',
+        type=int,
+        default=8080,
+        metavar='PORT',
+        help='Port for the web server (default: %(default)s).',
     )
 
     return parser
@@ -156,6 +176,11 @@ def main(argv: list[str] | None = None) -> None:
 
     if args.list_calls:
         format_list_calls(cf)
+        return
+
+    if args.serve:
+        from src.wms_viewer.web_ui import serve  # noqa: E402
+        serve(cf, host=args.host, port=args.port)
         return
 
     # Filter
