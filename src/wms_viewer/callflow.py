@@ -148,7 +148,7 @@ class CallFlow:
 
         # Trunk events
         if 'trunk_calls_count incremented' in msg:
-            return '📞 Incoming trunk call started'
+            return '📞 Trunk call started'
         if 'trunk_calls_count decremented' in msg:
             return '📴 Trunk ended'
 

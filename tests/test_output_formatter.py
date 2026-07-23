@@ -98,7 +98,7 @@ class TestFormatSummary:
         assert "👤 Caller: Anonymous" in out
         assert "📞 Dial: 102" in out
         assert "✅ Answered" in out
-        assert "📞 Incoming trunk call started" in out
+        assert "📞 Trunk call started" in out
         assert "📴 Trunk ended" in out
 
     def test_unknown_call_id_silently_skipped(self, callflow):
