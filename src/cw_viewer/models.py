@@ -7,7 +7,7 @@ from typing import Optional
 
 @dataclass
 class LogEntry:
-    """A single parsed log line from a Call Weaver log file.
+    """A single parsed log line from a Callweaver (CW) log file.
 
     Fields:
         line_number: 1-based line number in the source file.

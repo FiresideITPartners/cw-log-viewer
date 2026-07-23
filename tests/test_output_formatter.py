@@ -2,9 +2,9 @@
 import io
 import pytest
 
-from src.wms_viewer.parser import LogParser
-from src.wms_viewer.callflow import CallFlow
-from src.wms_viewer.output_formatter import (
+from src.cw_viewer.parser import LogParser
+from src.cw_viewer.callflow import CallFlow
+from src.cw_viewer.output_formatter import (
     format_list_calls,
     format_summary,
     format_raw,
@@ -185,7 +185,7 @@ class TestFormatRaw:
         assert len(lines) > 0
 
 
-# ── Integration: wiring through wms_viewer.py CLI ───────────────────
+# ── Integration: wiring through cw_viewer.py CLI ───────────────────
 
 class TestCLIIntegration:
     """Verify the formatters integrate correctly through the CLI."""
@@ -193,7 +193,7 @@ class TestCLIIntegration:
     def test_list_calls_via_cli(self):
         import subprocess, sys
         result = subprocess.run(
-            [sys.executable, "wms_viewer.py", "cwtrunc.txt", "--list-calls"],
+            [sys.executable, "cw_viewer.py", "cwtrunc.txt", "--list-calls"],
             capture_output=True, text=True,
         )
         assert result.returncode == 0
@@ -204,7 +204,7 @@ class TestCLIIntegration:
     def test_summary_single_call_via_cli(self):
         import subprocess, sys
         result = subprocess.run(
-            [sys.executable, "wms_viewer.py", "cwtrunc.txt",
+            [sys.executable, "cw_viewer.py", "cwtrunc.txt",
              "--summary", "--call-id", "C-0000004c"],
             capture_output=True, text=True,
         )
@@ -216,7 +216,7 @@ class TestCLIIntegration:
     def test_summary_all_calls_via_cli(self):
         import subprocess, sys
         result = subprocess.run(
-            [sys.executable, "wms_viewer.py", "cwtrunc.txt", "--summary"],
+            [sys.executable, "cw_viewer.py", "cwtrunc.txt", "--summary"],
             capture_output=True, text=True,
         )
         assert result.returncode == 0
@@ -225,7 +225,7 @@ class TestCLIIntegration:
     def test_raw_default_via_cli(self):
         import subprocess, sys
         result = subprocess.run(
-            [sys.executable, "wms_viewer.py", "cwtrunc.txt"],
+            [sys.executable, "cw_viewer.py", "cwtrunc.txt"],
             capture_output=True, text=True,
         )
         assert result.returncode == 0
@@ -237,7 +237,7 @@ class TestCLIIntegration:
     def test_time_filtered_raw_via_cli(self):
         import subprocess, sys
         result = subprocess.run(
-            [sys.executable, "wms_viewer.py", "cwtrunc.txt",
+            [sys.executable, "cw_viewer.py", "cwtrunc.txt",
              "--from", "12:38", "--to", "12:40"],
             capture_output=True, text=True,
         )

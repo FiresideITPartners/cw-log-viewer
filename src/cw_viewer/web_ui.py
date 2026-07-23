@@ -1,4 +1,4 @@
-"""Web UI server for the Call Weaver Log Viewer.
+"""Web UI server for the CW (Callweaver) Log Viewer.
 
 Provides a local HTTP server with REST API endpoints and a single-page
 browseable UI.  No external dependencies — stdlib only.
@@ -24,7 +24,7 @@ _HTML_PAGE = '''\
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wildix Call Weaver Log Viewer</title>
+<title>CW (Callweaver) Log Viewer</title>
 <style>
   :root {
     --bg: #1a1a2e;
@@ -74,7 +74,7 @@ _HTML_PAGE = '''\
 <body>
 <div id="sidebar">
   <div id="sidebar-header">
-    <h1>&#x1f4de; Call Weaver Log Viewer</h1>
+    <h1>&#x1f4de; CW Log Viewer</h1>
     <div class="subtitle" id="call-count">Loading...</div>
   </div>
   <div id="filters">
@@ -417,7 +417,7 @@ def serve(cf, host='127.0.0.1', port=8080, open_browser=True):
     CallFlowHandler.callflow = cf
     server = HTTPServer((host, port), CallFlowHandler)
     url = f"http://{host}:{port}"
-    print(f"\n  Call Weaver Log Viewer")
+    print(f"\n  CW Log Viewer")
     print(f"   Web UI: {url}")
     print(f"   Press Ctrl+C to stop.\n")
 

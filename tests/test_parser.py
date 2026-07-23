@@ -8,8 +8,8 @@ from pathlib import Path
 import sys
 sys.path.insert(0, str(Path(__file__).parent.parent / 'src'))
 
-from wms_viewer.parser import LogParser
-from wms_viewer.models import LogEntry
+from cw_viewer.parser import LogParser
+from cw_viewer.models import LogEntry
 
 
 # ── Line parsing tests ─────────────────────────────────────────────

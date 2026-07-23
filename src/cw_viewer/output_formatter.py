@@ -1,4 +1,4 @@
-"""Output formatters for Call Weaver log viewer.
+"""Output formatters for CW (Callweaver) log viewer.
 
 Provides three formatting functions:
   - format_list_calls(cf)      Table of Call-IDs with start/end times

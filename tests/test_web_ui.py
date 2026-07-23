@@ -12,9 +12,9 @@ from pathlib import Path
 import pytest
 
 sys.path.insert(0, str(Path(__file__).parent.parent / 'src'))
-from wms_viewer.web_ui import serve, CallFlowHandler  # noqa: E402
-from wms_viewer.parser import LogParser  # noqa: E402
-from wms_viewer.callflow import CallFlow  # noqa: E402
+from cw_viewer.web_ui import serve, CallFlowHandler  # noqa: E402
+from cw_viewer.parser import LogParser  # noqa: E402
+from cw_viewer.callflow import CallFlow  # noqa: E402
 
 
 # ── CLI argument tests (no server needed) ────────────────────────────
@@ -22,7 +22,7 @@ from wms_viewer.callflow import CallFlow  # noqa: E402
 def test_serve_is_mutually_exclusive_with_list_calls():
     """--serve and --list-calls together should fail."""
     result = subprocess.run(
-        [sys.executable, "wms_viewer.py", "cwtrunc.txt", "--serve", "--list-calls"],
+        [sys.executable, "cw_viewer.py", "cwtrunc.txt", "--serve", "--list-calls"],
         capture_output=True, text=True,
     )
     assert result.returncode != 0
@@ -31,7 +31,7 @@ def test_serve_is_mutually_exclusive_with_list_calls():
 def test_serve_is_mutually_exclusive_with_summary():
     """--serve and --summary together should fail."""
     result = subprocess.run(
-        [sys.executable, "wms_viewer.py", "cwtrunc.txt", "--serve", "--summary"],
+        [sys.executable, "cw_viewer.py", "cwtrunc.txt", "--serve", "--summary"],
         capture_output=True, text=True,
     )
     assert result.returncode != 0
@@ -40,7 +40,7 @@ def test_serve_is_mutually_exclusive_with_summary():
 def test_serve_is_mutually_exclusive_with_csv():
     """--serve and --csv together should fail."""
     result = subprocess.run(
-        [sys.executable, "wms_viewer.py", "cwtrunc.txt", "--serve", "--csv"],
+        [sys.executable, "cw_viewer.py", "cwtrunc.txt", "--serve", "--csv"],
         capture_output=True, text=True,
     )
     assert result.returncode != 0
@@ -49,7 +49,7 @@ def test_serve_is_mutually_exclusive_with_csv():
 def test_serve_short_flag_w_works():
     """-w should be the short form of --serve."""
     result = subprocess.run(
-        [sys.executable, "wms_viewer.py", "--help"],
+        [sys.executable, "cw_viewer.py", "--help"],
         capture_output=True, text=True,
     )
     assert "--serve" in result.stdout or "-w" in result.stdout
@@ -58,7 +58,7 @@ def test_serve_short_flag_w_works():
 def test_serve_with_port():
     """--serve --port 9999 should be accepted."""
     result = subprocess.run(
-        [sys.executable, "wms_viewer.py", "--help"],
+        [sys.executable, "cw_viewer.py", "--help"],
         capture_output=True, text=True,
     )
     assert "--port" in result.stdout
@@ -67,7 +67,7 @@ def test_serve_with_port():
 def test_default_port_is_8080():
     """Default port should be 8080."""
     result = subprocess.run(
-        [sys.executable, "wms_viewer.py", "--help"],
+        [sys.executable, "cw_viewer.py", "--help"],
         capture_output=True, text=True,
     )
     assert "8080" in result.stdout
@@ -76,7 +76,7 @@ def test_default_port_is_8080():
 def test_serve_with_host():
     """--host should be accepted."""
     result = subprocess.run(
-        [sys.executable, "wms_viewer.py", "--help"],
+        [sys.executable, "cw_viewer.py", "--help"],
         capture_output=True, text=True,
     )
     assert "--host" in result.stdout
