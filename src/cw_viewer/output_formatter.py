@@ -29,7 +29,7 @@ def format_list_calls(
         file: Output stream (default stdout).
     """
     col_cid = 16
-    col_time = 8
+    col_time = 19
     col_count = 8
     header = (
         f"{'Call-ID':<{col_cid}} {'Start':>{col_time}} "
@@ -44,8 +44,8 @@ def format_list_calls(
             continue
         first = call[0]
         last = call[-1]
-        start = first.timestamp.strftime('%H:%M:%S') if first.timestamp else '--:--:--'
-        end = last.timestamp.strftime('%H:%M:%S') if last.timestamp else '--:--:--'
+        start = first.timestamp.strftime('%Y-%m-%d %H:%M:%S') if first.timestamp else '--:--:--'
+        end = last.timestamp.strftime('%Y-%m-%d %H:%M:%S') if last.timestamp else '--:--:--'
         first_msg = (first.message or '')[:60]
         print(
             f"{cid:<{col_cid}} {start:>{col_time}} "
@@ -107,17 +107,17 @@ def format_raw(entries: list[LogEntry], file: TextIO = sys.stdout) -> None:
         return
 
     print(
-        f"{'Time':>8} {'Level':<8} {'Call-ID':<14} {'Process':<25} Message",
+        f"{'Time':>19} {'Level':<8} {'Call-ID':<14} {'Process':<25} Message",
         file=file,
     )
     print("-" * 120, file=file)
 
     for e in entries:
-        ts = e.timestamp.strftime('%H:%M:%S') if e.timestamp else '--:--:--'
+        ts = e.timestamp.strftime('%Y-%m-%d %H:%M:%S') if e.timestamp else '--:--:--'
         cid = e.call_id or '-'
         msg = (e.message or '')[:80]
         print(
-            f"{ts:>8} {e.level or '':<8} {cid:<14} "
+            f"{ts:>19} {e.level or '':<8} {cid:<14} "
             f"{e.process or '':<25} {msg}",
             file=file,
         )

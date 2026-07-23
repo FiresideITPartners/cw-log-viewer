@@ -242,7 +242,7 @@ class CallFlow:
             if not label:
                 continue
             ts = (
-                e.timestamp.strftime('%H:%M:%S')
+                e.timestamp.strftime('%Y-%m-%d %H:%M:%S')
                 if e.timestamp and e.timestamp != datetime.min
                 else '--:--:--'
             )
@@ -294,8 +294,8 @@ class CallFlow:
         header = (
             f"\n{'=' * 70}\n"
             f"Call {call_id}  |  "
-            f"{first.timestamp.strftime('%H:%M:%S')} "
-            f"→ {last.timestamp.strftime('%H:%M:%S')}"
+            f"{first.timestamp.strftime('%Y-%m-%d %H:%M:%S')} "
+            f"→ {last.timestamp.strftime('%Y-%m-%d %H:%M:%S')}"
             f"  ({duration:.0f}s)\n"
             f"Caller: {caller_name}  →  Destination: {destination}\n"
             f"{'-' * 70}"

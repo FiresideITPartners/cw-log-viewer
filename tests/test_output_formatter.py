@@ -63,14 +63,14 @@ class TestFormatListCalls:
         assert "56" in out   # C-0000004b
         assert "50" in out   # C-0000004c
 
-    def test_timestamps_in_hhmmss(self, callflow):
+    def test_timestamps_in_full_format(self, callflow):
         buf = io.StringIO()
         format_list_calls(callflow, file=buf)
         out = buf.getvalue()
-        assert "12:38:00" in out
-        assert "12:38:10" in out
-        assert "13:05:06" in out
-        assert "13:05:36" in out
+        assert "2026-07-16 12:38:00" in out
+        assert "2026-07-16 12:38:10" in out
+        assert "2026-07-16 13:05:06" in out
+        assert "2026-07-16 13:05:36" in out
 
 
 # ── format_summary ──────────────────────────────────────────────────
